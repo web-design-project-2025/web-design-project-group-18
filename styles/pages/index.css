@@ -1,3 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Banner Section */
 .banner {
     position: relative;
     text-align: center;
@@ -18,8 +26,54 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fff;
     font-size: 3rem;
 }
   
+/* News Section */
+.news {
+    width: 90%;
+    min-height: 480px;
+    margin: auto;
+    padding: 2rem 2rem;
+}
+  
+.news h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+  
+.news-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+  
+.card {
+    flex: 1;
+    margin: 1rem;
+    min-width: 250px;
+}
+  
+.card img {
+    width: 100%;
+}
+  
+.card .category {
+    font-size: 0.9rem;
+    color: #FF4655;
+    margin-top: 0.5rem;
+}
+  
+.card .date {
+    font-size: 0.8rem;
+    color: #777;
+}
+  
+.card h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #000;
+}
   
