@@ -59,6 +59,23 @@ header {
     color: #FF4655;
 }
 
+/* Button */
+.light-btn {
+    padding: 1rem 1.5rem;
+    background: #FF4655;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.light-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+
 /* Footer */
 footer {
     font-family: 'Segoe UI', sans-serif;
