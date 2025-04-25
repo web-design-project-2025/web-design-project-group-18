@@ -144,6 +144,8 @@ body {
     width: 100%;
     max-width: 1440px;
     margin: auto;
+    gap: 10rem;
+
 }
 
 .agents-text {
@@ -226,5 +228,62 @@ body {
 .weapons-img img {
     min-width: 800px;
     height: auto;
+    filter: drop-shadow(0px 15px 1px rgba(0, 0, 0, 0.25));
+
 }
 
+/* Maps Section */
+.maps {
+    background-image: url('../../assets/Ascent-Background-Valorant.png'); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.75); 
+    background-blend-mode: darken; 
+    
+}
+
+.maps-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    gap: 10rem;
+}
+
+.maps-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.maps-text h2 {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.maps-text p {
+    max-width: 450px;
+    margin: 1rem 0;
+    line-height: 170%;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.maps-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maps-img img {
+    max-width: 80%; 
+    height: auto; 
+    filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.5));
+}
