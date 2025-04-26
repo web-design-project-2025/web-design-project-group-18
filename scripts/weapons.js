@@ -4,9 +4,12 @@ async function fetchWeapons() {
         const data = await response.json();
         const weaponsContainer = document.createElement('div');
         weaponsContainer.classList.add('weapons-container');
-        document.body.insertBefore(weaponsContainer, document.querySelector('footer'));
+        document.querySelector('main').appendChild(weaponsContainer);
 
-        data.data.forEach(weapon => {
+        const weaponOrder = [8, 11, 7, 9, 10, 17, 16, 6, 5, 3, 13, 4, 2, 18, 15, 14, 12, 1, 0];
+
+        weaponOrder.forEach(weaponIndex => {
+            const weapon = data.data[weaponIndex];
             const weaponCard = document.createElement('div');
             weaponCard.classList.add('weapon-card');
 
@@ -22,7 +25,23 @@ async function fetchWeapons() {
             weaponCard.appendChild(img);
             weaponCard.appendChild(name);
 
-            weaponsContainer.appendChild(weaponCard);
+            let category = document.getElementById(weapon.category);
+
+            if (category == null) {
+                category = document.createElement('div');
+                category.id = weapon.category;
+                
+                const categoryName = document.createElement('h2');
+                categoryName.textContent = weapon.category.split('::')[1];
+                categoryName.classList.add('category-name');
+                category.appendChild(categoryName);
+
+                weaponsContainer.appendChild(category);
+            } 
+            category.appendChild(weaponCard);
+
+
+
         });
     } catch (error) {
         console.error('Error fetching weapons:', error);

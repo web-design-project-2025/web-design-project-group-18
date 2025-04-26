@@ -1,16 +1,45 @@
-#weapons-container {
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weapons-container {
+    background-color: #0F1923;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    flex-direction: column;
+    align-content: center;
+    padding: 2.5rem;
+    height: 69rem;
 }
-  
-.weapons-card {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
+
+.weapons-container>div {
+    margin: 1rem;
+}
+
+.category-name {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.weapon-card {
+    background-color: rgba(174, 174, 174, 0.08);
+    border: 0.19rem solid rgba(174, 174, 174, 0.20);
+    margin: 1.25rem 0rem 0rem 0rem;
+    width: 19.375rem;
+    height: 9.875rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+}
+
+.weapon-icon {
+   width: 17.68rem;
+   height: 5.69rem;
+   object-fit: contain;
+   margin: 1.63rem 0.88rem 0rem 0.88rem;
+}
+
+.weapon-name {
+    padding-left: 0.5rem;
 }
