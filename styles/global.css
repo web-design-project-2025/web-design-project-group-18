@@ -1,4 +1,26 @@
 /* global.css */
+@font-face {
+    font-family: "Tungsten";
+    src: url('/fonts/Tungsten-Bold.ttf');
+}
+
+@font-face {
+    font-family: "DIN Next";
+    src: url('/fonts/DIN Next W01 Regular.otf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: "DIN Next";
+    src: url('/fonts/DIN Next W10 Medium.otf');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "FF Mark";
+    src: url('/fonts/FontFont_FF.Mark.Pro.otf');
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +28,29 @@
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
+    font-family: "FF Mark", Arial, sans-serif;
     background-color: #0f1923;
     color: #f2f2f2;
 }
 
 header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+}
+
+h1 {
+    font-family: "Tungsten";
+}
+h2 {
+    font-family: "DIN Next";
+    font-weight: medium;
+}
+h3 {
+    font-family: "DIN Next";
+    font-weight: normal;
 }
 
 /* Navbar */
@@ -61,7 +95,6 @@ header {
 
 /* Footer */
 footer {
-    font-family: 'Segoe UI', sans-serif;
     background-color: #000;
     color: #fff;
     width: 100%;
