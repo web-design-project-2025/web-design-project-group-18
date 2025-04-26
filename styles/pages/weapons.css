@@ -46,3 +46,22 @@ main {
     padding-left: 0.6rem;
     text-transform: uppercase;
 }
+
+@media (min-width: 320px) and (max-width: 1390px) {
+
+    .weapons-container {
+        height: 93rem;
+    }
+}
+@media (min-width: 320px) and (max-width: 1050px) {
+
+    .weapons-container {
+        height: 136rem;
+    }
+}
+@media (min-width: 320px) and (max-width: 694px) {
+
+    .weapons-container {
+        height: initial;
+    }
+}
