@@ -93,6 +93,38 @@ h3 {
     color: #FF4655;
 }
 
+/* Button */
+.light-btn {
+    padding: 1rem 1.5rem;
+    background: #FF4655;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 150px;}
+
+.light-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.dark-btn {
+    padding: 1rem 1.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 150px;
+}
+.dark-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+
 /* Footer */
 footer {
     background-color: #000;
