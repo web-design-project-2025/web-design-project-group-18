@@ -31,7 +31,7 @@ async function fetchWeapons() {
                 category = document.createElement('div');
                 category.id = weapon.category;
                 
-                const categoryName = document.createElement('h2');
+                const categoryName = document.createElement('h1');
                 categoryName.textContent = weapon.category.split('::')[1];
                 categoryName.classList.add('category-name');
                 category.appendChild(categoryName);

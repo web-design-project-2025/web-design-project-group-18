@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     align-content: center;
     padding: 2.5rem;
-    height: 69rem;
+    height: 71rem;
 }
 
 .weapons-container>div {
@@ -19,13 +19,14 @@ main {
 }
 
 .category-name {
+    font-size: 2.3rem;
     text-align: center;
     text-transform: uppercase;
 }
 
 .weapon-card {
-    background-color: rgba(174, 174, 174, 0.08);
-    border: 0.19rem solid rgba(174, 174, 174, 0.20);
+    background-color: rgba(174, 174, 174, 0.1);
+    border: 0.19rem solid rgba(240, 240, 240, 0.1);
     margin: 1.25rem 0rem 0rem 0rem;
     width: 19.375rem;
     height: 9.875rem;
@@ -37,9 +38,11 @@ main {
    width: 17.68rem;
    height: 5.69rem;
    object-fit: contain;
-   margin: 1.63rem 0.88rem 0rem 0.88rem;
+   margin: 1.63rem 0.88rem 0.4rem 0.88rem;
 }
 
 .weapon-name {
-    padding-left: 0.5rem;
+    font-size: 1rem;
+    padding-left: 0.6rem;
+    text-transform: uppercase;
 }
