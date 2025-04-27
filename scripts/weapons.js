@@ -2,9 +2,11 @@ async function fetchWeapons() {
     try {
         const response = await fetch('https://valorant-api.com/v1/weapons');
         const data = await response.json();
+        const main = document.querySelector('main');
         const weaponsContainer = document.createElement('div');
         weaponsContainer.classList.add('weapons-container');
         document.querySelector('main').appendChild(weaponsContainer);
+        main.insertBefore(weaponsContainer, document.getElementById('detail'));
 
         const weaponOrder = [8, 11, 7, 9, 10, 17, 16, 6, 5, 3, 13, 4, 2, 18, 15, 14, 12, 1, 0];
 
@@ -39,8 +41,6 @@ async function fetchWeapons() {
                 weaponsContainer.appendChild(category);
             } 
             category.appendChild(weaponCard);
-
-
 
         });
     } catch (error) {

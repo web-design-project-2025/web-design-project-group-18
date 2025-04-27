@@ -1,8 +1,11 @@
 main {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
+
+/* Weapon Menu */
 
 .weapons-container {
     background-color: #0F1923;
@@ -10,8 +13,9 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    padding: 2.5rem;
+    padding: 2.5rem 2.5rem 1rem 2.5rem;
     height: 71rem;
+    width: 100vw;
 }
 
 .weapons-container>div {
@@ -27,7 +31,7 @@ main {
 .weapon-card {
     background-color: rgba(174, 174, 174, 0.1);
     border: 0.19rem solid rgba(240, 240, 240, 0.1);
-    margin: 1.25rem 0rem 0rem 0rem;
+    margin: 1.25rem 0 0 0rem;
     width: 19.375rem;
     height: 9.875rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -64,4 +68,91 @@ main {
     .weapons-container {
         height: initial;
     }
+}
+
+/* Weapon Detail */
+
+.weapon-detail {
+    width: 89rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+}
+
+.detail-head {
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 17rem;
+    padding: 1.25rem;
+    gap: 0.6rem;
+    align-items: center;
+    align-self: stretch;
+}
+
+.detail-head>div {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.title-text>h1 {
+    display: inline-block;
+    padding-right: 0.4rem;
+}
+
+.sub-title {
+    color: #b2b2b2;
+    font-size: 1.5rem;
+}
+
+.detail-text {
+    font-size: 0.85rem;
+}
+
+.detail-head>img {
+    background-color: darkolivegreen;
+    align-self: stretch;
+    object-fit: contain;
+}
+
+.detail-stats {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1.25rem;
+    min-height: 26.6rem;
+}
+
+.weapon-stats {
+    background-color: rgba(174, 174, 174, 0.1);
+    border: 0.19rem solid rgba(240, 240, 240, 0.1);
+    padding: 0.6rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.fire-stats {
+    padding-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.weapon-preview {
+    background-color: chocolate;
+}
+
+table, th, td {
+    border-collapse: collapse;
+
+}
+td {
+    height: 1.6rem;
+}
+th {
+    text-align: left;
+    padding-bottom: 0.6rem;
 }
