@@ -2,13 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: white;
 }
 .middle-section {
-  background-image: url(../../image/lightbackground.png);
-  background-size: cover;
-  background-position: center;
+  background-image: url(../../image/lightbackgroundd.png);
+
   background-repeat: no-repeat;
-  padding: 30px 0;
+  padding: 10px 0;
 }
 .content-wrapper {
   max-width: 1000px;
@@ -17,7 +17,8 @@ body {
   position: relative;
 }
 .title {
-  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-left: 30px;
   position: relative;
   display: inline-block;
 }
@@ -58,21 +59,21 @@ body {
 }
 
 .map-container {
-  position: relative;
+  margin-top: 8px;
   border: 2px solid #ff4b5c;
   overflow: hidden;
   border-radius: 10px;
 }
 
 .map-container img {
-  width: 750px;
-  height: auto;
+  width: 1150px;
+  height: 500px;
   display: block;
 }
 
 .map-name {
   position: absolute;
-  top: 190px;
+  top: 405px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.1);
