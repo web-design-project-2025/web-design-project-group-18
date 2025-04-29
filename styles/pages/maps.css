@@ -6,9 +6,8 @@ body {
 }
 .middle-section {
   background-image: url(../../image/lightbackgroundd.png);
+
   background-repeat: no-repeat;
-  background-size:auto ;
-  background-position: left top;
   padding: 10px 0;
 }
 .content-wrapper {
@@ -59,20 +58,21 @@ body {
   user-select: none;
 }
 
-
+.map-container {
+  margin-top: 8px;
+  border: 2px solid #ff4b5c;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
 .map-container img {
   width: 100%;
   height: auto;
   display: block;
-  border: 2px solid #ff4b5c;
-  overflow: hidden;
-  border-radius: 10px;
-  
   max-width: 1000px;
   margin: 0 auto;
 }
-ap-name {
+.map-name {
   position: absolute;
   top: 405px;
   left: 50%;
@@ -86,10 +86,9 @@ ap-name {
 }
 
 .pagination {
-  margin-top: 50px;
+  margin-top: 90px;
   text-align: center;
 }
-
 .pagination span {
   display: inline-block;
   margin: 0 5px;
@@ -98,15 +97,3 @@ ap-name {
   color: #333;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
-  .title h2 {
-    font-size: 24px;
-    padding: 10px 40px;
-  }
-
-  .map-name {
-    top: 300px;
-    font-size: 22px;
-  }
-}
-.
