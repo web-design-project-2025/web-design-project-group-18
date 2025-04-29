@@ -6,8 +6,9 @@ body {
 }
 .middle-section {
   background-image: url(../../image/lightbackgroundd.png);
-
   background-repeat: no-repeat;
+  background-size:auto ;
+  background-position: left top;
   padding: 10px 0;
 }
 .content-wrapper {
@@ -58,20 +59,20 @@ body {
   user-select: none;
 }
 
-.map-container {
-  margin-top: 8px;
+
+
+.map-container img {
+  width: 100%;
+  height: auto;
+  display: block;
   border: 2px solid #ff4b5c;
   overflow: hidden;
   border-radius: 10px;
+  
+  max-width: 1000px;
+  margin: 0 auto;
 }
-
-.map-container img {
-  width: 1150px;
-  height: 500px;
-  display: block;
-}
-
-.map-name {
+ap-name {
   position: absolute;
   top: 405px;
   left: 50%;
@@ -85,8 +86,8 @@ body {
 }
 
 .pagination {
-  margin-top: 90px;
-  margin-left: 600px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .pagination span {
@@ -97,3 +98,15 @@ body {
   color: #333;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .title h2 {
+    font-size: 24px;
+    padding: 10px 40px;
+  }
+
+  .map-name {
+    top: 300px;
+    font-size: 22px;
+  }
+}
+.
