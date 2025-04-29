@@ -1,23 +1,21 @@
 async function loadNews() {
+    const cardGrid = document.getElementById('card-grid');
+    const cardTemplate = cardGrid.querySelector('.card'); // Get the existing card template
+
     try {
-        const response = await fetch('data/news.json'); 
+        const response = await fetch('data/news.json');
         const data = await response.json();
-        const cards = document.querySelectorAll('.card'); 
+        cardGrid.innerHTML = '';
 
-        cards.forEach((card, index) => {
-            const category = card.querySelector('.category');
-            const date = card.querySelector('.date');
-            const title = card.querySelector('.card-title');
-            const img = card.querySelector('.news-thumbnail');
+        data.forEach((newsItem) => {
+            const card = cardTemplate.cloneNode(true); // Clone the existing card template
+            card.querySelector('.news-thumbnail').src = newsItem.thumbnail;
+            card.querySelector('.news-thumbnail').alt = newsItem.title;
+            card.querySelector('.category').textContent = newsItem.category;
+            card.querySelector('.date').textContent = newsItem.date;
+            card.querySelector('.card-title').textContent = newsItem.title;
 
-            const newsItem = data[index]; // Use the index to get the corresponding news item
-            if (newsItem) {
-                date.textContent = newsItem.date; 
-                title.textContent = newsItem.title; 
-                img.src = newsItem.thumbnail;
-                img.alt = newsItem.title; 
-                category.textContent = newsItem.category; 
-            }
+            cardGrid.appendChild(card);
         });
     } 
     catch (error) {
