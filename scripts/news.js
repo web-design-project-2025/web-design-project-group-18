@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         card.classList.remove('hidden');
 
+        // Add click event listener to the card
+        card.addEventListener('click', () => {
+            localStorage.setItem('newsDetail', JSON.stringify(newsItem));
+            window.location.href = 'news-detail.html';
+        });
+
         return card;
     }
 
