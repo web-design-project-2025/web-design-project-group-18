@@ -29,8 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add click event listener to the card
         card.addEventListener('click', () => {
-            localStorage.setItem('newsDetail', JSON.stringify(newsItem));
-            window.location.href = 'news-detail.html';
+            if (newsItem.youtube) {
+                window.open(newsItem.youtube, '_blank'); // Open YouTube link in a new tab
+            } else {
+                localStorage.setItem('newsDetail', JSON.stringify(newsItem));
+                window.location.href = 'news-detail.html';
+            }
         });
 
         return card;
