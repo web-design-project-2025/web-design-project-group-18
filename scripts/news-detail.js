@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         detailContainer.querySelector('.detail-title').textContent = newsDetail.title;
         detailContainer.querySelector('.detail-category').textContent = newsDetail.category;
         detailContainer.querySelector('.detail-date').textContent = newsDetail.date;
-        detailContainer.querySelector('.detail-content').textContent = newsDetail.content;
+        detailContainer.querySelector('.detail-content').innerHTML  = newsDetail.content;
 
         // Remove click event listeners from the detail page
         const detailThumbnail = detailContainer.querySelector('.detail-thumbnail');

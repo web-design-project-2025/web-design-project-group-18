@@ -1,0 +1,82 @@
+body {
+    background-color: #fff; 
+  }
+  
+
+/* News-detail Background */
+.detail-bg {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+.detail-bg::before {
+  content: '';
+  position: absolute;
+  height: 360px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; 
+  background-image: url('../../assets/Light-Background-Valorant-2.png');
+  background-size: cover;
+  background-position: 50% 0%;
+}
+
+/* News-detail Container */  
+.detail-container { 
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+}
+  
+.detail-thumbnail {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+  
+.detail-title {
+    font-size: 3em;
+    margin-bottom: 2rem;
+    color: #000; 
+    font-family: "Tungsten"; 
+}
+
+.detail-divider {
+    width: 100%;
+    background-color: #777;
+}
+  
+.detail-meta {
+    display: flex;
+    font-size: 0.75em;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-category {
+    color: #ff4655;
+}
+
+.divider {
+    margin: 0 1rem;
+    color: #777;
+}
+
+.detail-date {
+    color: #777;
+}
+  
+.detail-content {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 1em;
+    color: #000;
+    white-space: pre-wrap; 
+}
+  
