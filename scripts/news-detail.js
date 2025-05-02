@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         detailContainer.querySelector('.detail-category').textContent = newsDetail.category;
         detailContainer.querySelector('.detail-date').textContent = newsDetail.date;
         detailContainer.querySelector('.detail-content').textContent = newsDetail.content;
+
+        // Remove click event listeners from the detail page
+        const detailThumbnail = detailContainer.querySelector('.detail-thumbnail');
+        detailThumbnail.style.pointerEvents = 'none';
     } else {
         document.querySelector('#news-detail').innerHTML = '<p>News detail not found.</p>';
     }
