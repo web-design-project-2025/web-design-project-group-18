@@ -77,6 +77,34 @@ body {
     line-height: 1.7;
     font-size: 1em;
     color: #000;
-    white-space: pre-wrap; 
+    
+    
 }
-  
+
+.detail-content h1, .detail-content h2, .detail-content h3 {
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.detail-content ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.detail-content ul ul {
+    list-style-type: circle;
+    margin-left: 2rem;
+}
+
+.detail-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.detail-content p {
+    margin-bottom: 1.5rem; 
+    line-height: 1.7; 
+}
