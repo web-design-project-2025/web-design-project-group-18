@@ -1,29 +1,96 @@
-#agents-container {
+/* Sorting Button */
+.sorting-container {
+    width: 90%;
+    margin: 4rem auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; 
+    justify-content: space-between; 
 }
 
 .sorting-button {
     background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    padding: 10px 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 1rem 5rem;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-transform: uppercase;
-    border-radius: 5px;
+    
 }
 
 .sorting-button.active {
     background-color: #ff4655;
-    color: #ffffff;
+    color: #fff;
     border-color: #ff4655;
 }
 
 .sorting-button:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #fff;
+    color: #000;
 }
 
+/* Agents Container */
+#agents-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr)); 
+    gap: 3rem; 
+    margin: auto;
+}
+
+.agent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid transparent;
+    margin: 1rem auto;
+    padding: 2rem;
+    width: 400px; 
+    height: 240px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+.agent:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); 
+    border-color: #ff4655;
+}
+
+.agent h2 {
+    font-size: 2.4em; 
+    font-weight: bold;
+    color: #fff; 
+    text-transform: uppercase; 
+    text-shadow: 0 2px 4px #fff; 
+    top: 50%; 
+    left: 50%; 
+    margin: 0; 
+    position: absolute; 
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+}
+
+.agent img {
+    max-width: 90%; 
+    height: auto;
+    position: absolute;
+    top: -5.5rem; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1; 
+}
+
+.agent p {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid #fff;
+    font-size: 0.75em;
+    color: #fff;
+    line-height: 1.5;
+    padding: 0.25rem 1rem;
+}
