@@ -28,13 +28,14 @@
     </header>   
     
     <main>
-        <div id="agents-container">
-            <div class="agent-card">
-                <img src="" alt="" class="agent-icon">
-                <h3 class="agent-name"></h3>
-                <p class="agent-role"></p>
-            </div>
+        <div class="sorting-container">
+            <button class="sorting-button active" data-role="all">All Agents</button>
+            <button class="sorting-button" data-role="Sentinel">Sentinel</button>
+            <button class="sorting-button" data-role="Initiator">Initiator</button>
+            <button class="sorting-button" data-role="Controller">Controller</button>
+            <button class="sorting-button" data-role="Duelist">Duelist</button>
         </div>
+        <div id="agents-container"></div>
     </main>
 
     <footer>
