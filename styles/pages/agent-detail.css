@@ -1,0 +1,73 @@
+#agent-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    color: #fff;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.agent-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.agent-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.agent-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.agent-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.agent-info h3 {
+    font-size: 1.5rem;
+    color: #ff4655;
+    margin-bottom: 10px;
+}
+
+.agent-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.abilities {
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.abilities h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.abilities .ability {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.abilities .ability img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.abilities .ability p {
+    font-size: 1rem;
+    line-height: 1.5;
+}

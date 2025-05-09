@@ -45,11 +45,15 @@ function displayAgents(agents) {
         const agentDiv = document.createElement('div');
         agentDiv.className = 'agent';
         agentDiv.style.borderImage = getAgentGradientBorder(agent); // Apply gradient border
-        agentDiv.style.borderImageSlice = 1; 
+        agentDiv.style.borderImageSlice = 1;
+
+        const agentNameSlug = encodeURIComponent(agent.displayName); // Encode the name to preserve special characters
 
         agentDiv.innerHTML = `
             <h2>${agent.displayName}</h2>   
-            <img src="${agent.fullPortrait}" alt="${agent.displayName}">
+            <a href="agent-detail.html?${agentNameSlug}">
+                <img src="${agent.fullPortrait}" alt="${agent.displayName}">
+            </a>
             <p class="role">${agent.role.displayName}</p>
         `;
         container.appendChild(agentDiv);
