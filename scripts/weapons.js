@@ -49,6 +49,13 @@ async function fetchWeapons() {
 function showWeaponDetail(weapon) {
     const detail = document.getElementById('detail');
     if (!detail) return;
+    // Show the weapon detail section and scroll to it
+    if (detail.style.display === 'none' || getComputedStyle(detail).display === 'none') {
+        detail.style.display = 'block';
+    }
+    setTimeout(() => {
+        detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
 
     // Fill detail-head
     const titleText = detail.querySelector('.title-text h1');
@@ -61,6 +68,35 @@ function showWeaponDetail(weapon) {
     if (detailImg) {
         detailImg.src = weapon.displayIcon || '';
         detailImg.alt = weapon.displayName || '';
+    }
+
+    // Weapon Preview: show a random skin video if available
+    const previewDiv = detail.querySelector('.weapon-preview');
+    const video = previewDiv.querySelector('.weapon-skin-video');
+    if (weapon.skins && weapon.skins.length > 0) {
+        // Filter for skins with a video
+        const skinsWithVideo = weapon.skins.filter(skin => skin.chromas && skin.chromas.some(c => c.streamedVideo));
+        let chosenSkin = null;
+        let chosenChroma = null;
+        if (skinsWithVideo.length > 0) {
+            chosenSkin = skinsWithVideo[Math.floor(Math.random() * skinsWithVideo.length)];
+            // Pick a random chroma with a video
+            const chromasWithVideo = chosenSkin.chromas.filter(c => c.streamedVideo);
+            chosenChroma = chromasWithVideo[Math.floor(Math.random() * chromasWithVideo.length)];
+        }
+        if (chosenChroma && chosenChroma.streamedVideo) {
+            video.src = chosenChroma.streamedVideo;
+            video.poster = chosenChroma.fullRender || chosenChroma.displayIcon || '';
+            video.style.display = '';
+        } else {
+            video.src = '';
+            video.poster = '';
+            video.style.display = 'none';
+        }
+    } else {
+        video.src = '';
+        video.poster = '';
+        video.style.display = 'none';
     }
 
     // Weapon Stats
