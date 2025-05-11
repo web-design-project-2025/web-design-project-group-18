@@ -5,7 +5,7 @@ async function fetchWeapons() {
         const main = document.querySelector('main');
         const weaponsContainer = document.createElement('div');
         weaponsContainer.classList.add('weapons-container');
-        document.querySelector('main').appendChild(weaponsContainer);
+        main.appendChild(weaponsContainer);
         main.insertBefore(weaponsContainer, document.getElementById('detail'));
 
         const weaponOrder = [8, 11, 7, 9, 10, 17, 16, 6, 5, 3, 13, 4, 2, 18, 15, 14, 12, 1, 0];
@@ -28,24 +28,114 @@ async function fetchWeapons() {
             weaponCard.appendChild(name);
 
             let category = document.getElementById(weapon.category);
-
             if (category == null) {
                 category = document.createElement('div');
                 category.id = weapon.category;
-                
                 const categoryName = document.createElement('h1');
                 categoryName.textContent = weapon.category.split('::')[1];
                 categoryName.classList.add('category-name');
                 category.appendChild(categoryName);
-
                 weaponsContainer.appendChild(category);
-            } 
+            }
             category.appendChild(weaponCard);
-
+            weaponCard.addEventListener('click', () => showWeaponDetail(weapon));
         });
     } catch (error) {
         console.error('Error fetching weapons:', error);
     }
+}
+
+// Create weapon detail card
+function showWeaponDetail(weapon) {
+    const detail = document.getElementById('detail');
+    if (!detail) return;
+
+    // Fill detail-head
+    const titleText = detail.querySelector('.title-text h1');
+    if (titleText) titleText.textContent = weapon.displayName || '';
+    const subTitle = detail.querySelector('.title-text .sub-title');
+    if (subTitle) subTitle.textContent = weapon.shopData ? weapon.shopData.category : '';
+    const detailText = detail.querySelector('.detail-text');
+    if (detailText) detailText.textContent = weapon.shopData ? `Cost: ${weapon.shopData.cost}` : '';
+    const detailImg = detail.querySelector('.detail-head img');
+    if (detailImg) {
+        detailImg.src = weapon.displayIcon || '';
+        detailImg.alt = weapon.displayName || '';
+    }
+
+    // Weapon Stats
+    const weaponStats = [
+        ['Fire Rate', weapon.weaponStats?.fireRate],
+        ['Magazine Size', weapon.weaponStats?.magazineSize],
+        ['Reload Time', weapon.weaponStats?.reloadTimeSeconds],
+        ['Equip Time', weapon.weaponStats?.equipTimeSeconds],
+        ['First Bullet Accuracy', weapon.weaponStats?.firstBulletAccuracy],
+        ['ADS Fire Rate', weapon.weaponStats?.adsFireRate],
+        ['Run Speed Multiplier', weapon.weaponStats?.runSpeedMultiplier]
+    ];
+    fillStatsTable(detail.querySelector('.weapon-stats table'), 'Weapon Stats', weaponStats);
+
+    // ADS Stats
+    const adsStatsTable = detail.querySelector('.ads-stats table');
+    if (adsStatsTable) {
+        const adsStats = weapon.weaponStats?.adsStats || {};
+        const adsRows = [
+            ['Zoom Multiplier', adsStats.zoomMultiplier],
+            ['Fire Rate', adsStats.fireRate],
+            ['Run Speed Multiplier', adsStats.runSpeedMultiplier],
+            ['Burst Count', adsStats.burstCount],
+            ['First Bullet Accuracy', adsStats.firstBulletAccuracy]
+        ].filter(([_, value]) => value !== undefined && value !== null);
+        if (Object.keys(adsStats).length && adsRows.length) {
+            fillStatsTable(adsStatsTable, 'ADS Stats', adsRows);
+            adsStatsTable.parentElement.style.display = '';
+        } else {
+            adsStatsTable.innerHTML = '<th class="title-text" colspan="2"><h1>ADS Stats</h1></th><tr><td colspan="2" style="color:#b2b2b2; font-weight:normal;">No ADS stats for this weapon</td></tr>';
+            adsStatsTable.parentElement.style.display = '';
+        }
+    }
+
+    // Damage Ranges
+    fillDamageRangesTable(
+        detail.querySelector('.damage-range-section .damage-distance'),
+        weapon.weaponStats?.damageRanges
+    );
+}
+
+// This function fills the stats table with the provided title and rows
+function fillStatsTable(table, title, rows) {
+    if (!table) return;
+    table.innerHTML = `<th class="title-text" colspan="2"><h1>${title}</h1></th>`;
+    rows.forEach(([label, value]) => {
+        if (value !== undefined && value !== null) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${label}</td><td><b>${value}</b></td>`;
+            table.appendChild(tr);
+        }
+    });
+}
+
+// This function fills the damage ranges table with the provided ranges
+function fillDamageRangesTable(table, ranges) {
+    if (!table || !ranges || !ranges.length) return;
+    table.innerHTML = '<th class="title-text" colspan="2"><h1>Damage Ranges</h1></th>';
+    ranges.forEach(range => {
+        const sectionRow = document.createElement('tr');
+        sectionRow.className = 'range-section-row';
+        sectionRow.innerHTML = `<td colspan="2"><span class="range-start">${range.rangeStartMeters}M</span> - ${range.rangeEndMeters}M</td>`;
+        table.appendChild(sectionRow);
+        [
+            ['Head', range.headDamage],
+            ['Body', range.bodyDamage],
+            ['Leg', range.legDamage]
+        ].forEach(([label, value]) => {
+            if (value !== undefined && value !== null) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${label}</td><td><b>${value}</b></td>`;
+                table.appendChild(tr);
+            }
+        });
+    });
 }
 
 fetchWeapons();
