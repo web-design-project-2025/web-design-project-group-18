@@ -35,7 +35,12 @@ main {
     width: 19.375rem;
     height: 9.875rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
+}
+.weapon-card:hover {
+    cursor: pointer;
+    border-color: #00FFCC;
+    transition: 0.3s ease;
 }
 
 .weapon-icon {
@@ -109,19 +114,32 @@ main {
 }
 
 .detail-head>img {
-    background-color: darkolivegreen;
     align-self: stretch;
     object-fit: contain;
+    max-height: 100%;
+    width: 100%;
 }
 
 .detail-stats {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    "stats damage"
+    "preview";
     gap: 1.25rem;
     min-height: 26.6rem;
 }
 
 /* Weapon Stats Section */
+.weapon-stats {
+    grid-area: stats;
+}
+.weapon-preview {
+    grid-area: preview;
+}
+.damage-range-section {
+    grid-area: damage;
+}
+
 .weapon-stats,
 .damage-range-section {
     background-color: rgba(174, 174, 174, 0.1);
@@ -217,4 +235,11 @@ th {
     height: 100%;
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@media (min-width: 320px) and (max-width: 1250px) {
+    .detail-stats {
+        grid-template-areas: 
+        "stats damage preview";
+    }
 }
