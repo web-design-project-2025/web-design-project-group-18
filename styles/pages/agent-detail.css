@@ -1,73 +1,179 @@
+/* Agent detail Container */
 #agent-details-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Dark-Background-Valorant.png');
+    background-size: cover;
+    background-position: 50% 75%;
+}
+
+/* Agent Info */
+.agent-info {
+    grid-row: span 5 / span 5;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 20px auto;
-    width: 90%;
-    color: #fff;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.agent-image {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.agent-image img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.agent-info {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.agent-info h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.agent-info h3 {
-    font-size: 1.5rem;
-    color: #ff4655;
-    margin-bottom: 10px;
-}
-
-.agent-info p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.abilities {
-    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 2;
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
+    margin-left: 4rem;
+}
+
+.agent-name-banner {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-family: 'Tungsten', Arial, sans-serif;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background: #FF4655;
+    color: #fff;
+    position: relative;
+    min-width: 250px;
+    text-align: center;
+
+}
+.agent-name-banner span {
+    font-size: 4rem;
+    text-align: center;
+}
+.agent-name-banner::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #FF4655;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#agent-role {
+    color: #00e6d8;
+    font-family: 'DIN Next Medium', Arial, sans-serif;
+    font-size: 2rem;
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+#agent-description {
+    color: #fff;
+    font-family: 'FF Mark', Arial, sans-serif;
+    font-size: 1.35rem;
+    margin-top: 0.5rem;
+    min-width: 400px;
+    line-height: 170%;
+    font-weight: 400;
+}
+
+/* Agent Image */
+.agent-image {
+    grid-column: span 3 / span 3;
+    grid-row: span 5 / span 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    z-index: 3;
+    width: 100%;
+}
+
+.agent-image-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 700px;
+    width: 100%;
+    opacity: 1;
+    pointer-events: none;
+}
+
+#agent-image {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    z-index: 2;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.7));
+}
+
+/* Agent Abilities */
+.abilities {
+    grid-row: span 5 / span 5;
+    grid-column-start: 5;
+    border-radius: 0;
+    margin-right: 2rem;
+    padding: 0 5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
 }
 
 .abilities h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 2.2rem;
+    font-family: 'Tungsten', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
-.abilities .ability {
+#agent-abilities {
+    display: flex;
+    gap: 2.2rem;
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
+}
+
+.ability-icon {
+    width: 65px;
+    height: 65px;
+    background: rgba(255,255,255,0.5);
+    position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
+    transition: background 0.3s;
 }
 
-.abilities .ability img {
+.ability-icon.selected, .ability-icon:hover {
+    background: #FF4655;
+}
+
+.ability-icon img {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
-    border-radius: 5px;
+    filter: brightness(0) invert(1);
 }
 
-.abilities .ability p {
-    font-size: 1rem;
-    line-height: 1.5;
+.ability-icon::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 65px;
+    height: 65px;
+    border: 1px solid #FF4655;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ability-description {
+    font-size: 1.13rem;
+    border-left: 4px solid #FF4655;
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    color: #fff;
+    font-family: 'FF Mark', Arial, sans-serif;
+    min-height: 120px;
 }

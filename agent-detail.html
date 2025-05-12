@@ -29,18 +29,21 @@
 
     <main>
         <section id="agent-details-container">
-            <div class="agent-image">
-                <img id="agent-image" src="" alt="Agent Image">
-            </div>
             <div class="agent-info">
-                <h2 id="agent-name"></h2>
+                <div class="agent-name-banner">
+                    <span id="agent-name"></span>
+                </div>
                 <h3 id="agent-role"></h3>
                 <p id="agent-description"></p>
             </div>
+            <div class="agent-image">
+                <img id="agent-image-bg" class="agent-image-bg" src="" alt="Agent Background" />
+                <img id="agent-image" src="" alt="Agent Image">
+            </div>
             <div class="abilities">
-                <h3>Abilities</h3>
-                <div id="agent-abilities">
-                </div>
+                <h3>Special Abilities</h3>
+                <div id="agent-abilities"></div>
+                <div id="ability-description-container"></div>
             </div>
         </section>
     </main>
