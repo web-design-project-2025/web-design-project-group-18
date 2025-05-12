@@ -123,8 +123,7 @@ main {
 .detail-stats {
     display: grid;
     grid-template-areas: 
-    "stats damage"
-    "preview";
+    "stats preview damage";
     gap: 1.25rem;
     min-height: 26.6rem;
 }
@@ -240,6 +239,15 @@ th {
 @media (min-width: 320px) and (max-width: 1250px) {
     .detail-stats {
         grid-template-areas: 
-        "stats damage preview";
+        "stats damage"
+        "preview preview";
+    }
+}
+@media (min-width: 320px) and (max-width: 760px) {
+    .detail-stats {
+        grid-template-areas: 
+        "stats"
+        "damage"
+        "preview";
     }
 }
