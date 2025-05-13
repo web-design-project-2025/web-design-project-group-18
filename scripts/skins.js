@@ -1,44 +1,198 @@
+async function fetchWeapons() {
+    try {
+        const response = await fetch("https://valorant-api.com/v1/weapons");
+        const data = await response.json();
+
+        let WeaponName = window.location.hash.slice(1);
+
+        if (WeaponName === "") {
+            WeaponName = "classic";
+        }
+        window.document.querySelector(".active").classList.remove("active");
+        window.document.querySelector("." + WeaponName).classList.add("active");
+
+        const skinsDiv = window.document.querySelector(".skins");
+
+        skinsDiv.innerHTML = "";
+
+        data.data.forEach((weapon) => {
+            if (weapon.displayName.toLowerCase() === WeaponName) {
+                let skins = weapon.skins;
+                let first = skins[0];
+
+                updateSkin(first);
+
+                // Create Skins List
+                skins.forEach((skin) => {
+                    const img = document.createElement("img");
+                    img.src = skin.displayIcon;
+                    img.onclick = (e) => {
+                        updateSkin(skin);
+                        document.querySelector(".button-selected").classList.remove("button-selected");
+                        img.parentElement.parentElement.classList.add("button-selected");
+                    };
+                    const imgContainer = document.createElement("div");
+                    imgContainer.appendChild(img);
+                    imgContainer.classList.add("skins-img");
+
+                    const Corner1 = document.createElement("div");
+                    Corner1.classList.add("c1");
+                    const Corner2 = document.createElement("div");
+                    Corner2.classList.add("c2");
+                    const Corner3 = document.createElement("div");
+                    Corner3.classList.add("c3");
+                    const Corner4 = document.createElement("div");
+                    Corner4.classList.add("c4");
+
+                    const styledButton = document.createElement("div");
+                    styledButton.classList.add("styled-button");
+                    styledButton.appendChild(
+                        imgContainer,
+                        Corner1,
+                        Corner2,
+                        Corner3,
+                        Corner4
+                    );
+                    if (skin.displayName === first.displayName) {
+                        styledButton.classList.add("button-selected");
+                    }
+
+                    skinsDiv.appendChild(styledButton);
+                });
+
+                
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching weapons:", error);
+    }
+}
+
+function updateSkin(skin) {
+    window.document.getElementById("preview").src = skin.displayIcon;
+    document.querySelector(".preview>h1").textContent = skin.displayName.toUpperCase();
+
+    const levelsDiv = window.document.querySelector(".levels");
+    const variantDiv = window.document.querySelector(".variants");
+
+    levelsDiv.innerHTML = "";
+    variantDiv.innerHTML = "";
+
+    // Create Levels Buttons
+    if (skin.levels.length > 1) {
+        skin.levels.forEach((level) => {
+            const img = document.createElement("img");
+            img.src = level.displayIcon;
+            const imgContainer = document.createElement("div");
+            imgContainer.appendChild(img);
+            imgContainer.classList.add("img-container");
+
+            const Corner1 = document.createElement("div");
+            Corner1.classList.add("c1");
+            const Corner2 = document.createElement("div");
+            Corner2.classList.add("c2");
+            const Corner3 = document.createElement("div");
+            Corner3.classList.add("c3");
+            const Corner4 = document.createElement("div");
+            Corner4.classList.add("c4");
+
+            const styledButton = document.createElement("div");
+            styledButton.classList.add("styled-button");
+            styledButton.appendChild(
+                imgContainer,
+                Corner1,
+                Corner2,
+                Corner3,
+                Corner4
+            );
+
+            levelsDiv.appendChild(styledButton);
+        });
+    }
+
+    // Create Variants Buttons
+    if (skin.chromas.length > 1) {
+        skin.chromas.forEach((chromas) => {
+            const img = document.createElement("img");
+            img.src = chromas.swatch;
+            const imgContainer = document.createElement("div");
+            imgContainer.appendChild(img);
+            imgContainer.classList.add("img-container");
+
+            const Corner1 = document.createElement("div");
+            Corner1.classList.add("c1");
+            const Corner2 = document.createElement("div");
+            Corner2.classList.add("c2");
+            const Corner3 = document.createElement("div");
+            Corner3.classList.add("c3");
+            const Corner4 = document.createElement("div");
+            Corner4.classList.add("c4");
+
+            const styledButton = document.createElement("div");
+            styledButton.classList.add("styled-button");
+            styledButton.appendChild(
+                imgContainer,
+                Corner1,
+                Corner2,
+                Corner3,
+                Corner4
+            );
+
+            variantDiv.appendChild(styledButton);
+        });
+    }
+}
+
 /* Scroll source: https://stackoverflow.com/questions/28576636*/
 
 let mouseDown = false;
 let startX, scrollLeft;
-const slider = document.querySelector('.menu');
+const slider = document.querySelector(".menu");
 
 const startDragging = (e) => {
-  mouseDown = true;
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-}
+    mouseDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+};
 
 const stopDragging = (e) => {
-  mouseDown = false;
-}
+    mouseDown = false;
+};
 
 const move = (e) => {
-  e.preventDefault();
-  if(!mouseDown) { return; }
-  const x = e.pageX - slider.offsetLeft;
-  const scroll = x - startX;
-  slider.scrollLeft = scrollLeft - scroll;
-}
+    e.preventDefault();
+    if (!mouseDown) {
+        return;
+    }
+    const x = e.pageX - slider.offsetLeft;
+    const scroll = x - startX;
+    slider.scrollLeft = scrollLeft - scroll;
+};
 
 // Add the event listeners
-slider.addEventListener('mousemove', move, false);
-slider.addEventListener('mousedown', startDragging, false);
-slider.addEventListener('mouseup', stopDragging, false);
-slider.addEventListener('mouseleave', stopDragging, false);
+slider.addEventListener("mousemove", move, false);
+slider.addEventListener("mousedown", startDragging, false);
+slider.addEventListener("mouseup", stopDragging, false);
+slider.addEventListener("mouseleave", stopDragging, false);
 
 /* --------------------------------------------------------------------------*/
 
+// Lets scroll horizontal while hovering menu
 let isHovered = false;
 
-window.addEventListener('wheel', (event) => {
-    if (!isHovered) return;
-    console.log(isHovered);
-    slider.scrollLeft += event.deltaY * 0.5;
+window.addEventListener(
+    "wheel",
+    (event) => {
+        if (!isHovered) return;
+        console.log(isHovered);
+        slider.scrollLeft += event.deltaY * 0.5;
 
-    event.preventDefault();
-}, { passive: false });
+        event.preventDefault();
+    },
+    { passive: false }
+);
 
-slider.addEventListener('mouseenter', () => isHovered = true);
-slider.addEventListener('mouseleave', () => isHovered = false);
+slider.addEventListener("mouseenter", () => (isHovered = true));
+slider.addEventListener("mouseleave", () => (isHovered = false));
+
+fetchWeapons();
