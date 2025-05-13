@@ -53,13 +53,12 @@ async function fetchWeapons() {
 
                     const styledButton = document.createElement("div");
                     styledButton.classList.add("styled-button");
-                    styledButton.appendChild(
-                        imgContainer,
-                        Corner1,
-                        Corner2,
-                        Corner3,
-                        Corner4
-                    );
+                    styledButton.appendChild(imgContainer);
+                    styledButton.appendChild(Corner1);
+                    styledButton.appendChild(Corner2);
+                    styledButton.appendChild(Corner3);
+                    styledButton.appendChild(Corner4);
+
                     if (skin.displayName === first.displayName) {
                         styledButton.classList.add("button-selected");
                     }
@@ -67,7 +66,6 @@ async function fetchWeapons() {
                     skinsDiv.appendChild(styledButton);
                 });
 
-                
             }
         });
     } catch (error) {
@@ -90,6 +88,9 @@ function updateSkin(skin) {
         skin.levels.forEach((level) => {
             const img = document.createElement("img");
             img.src = level.displayIcon;
+            img.onclick = (e) => {
+                popup(level.streamedVideo, level.displayName);
+            }
             const imgContainer = document.createElement("div");
             imgContainer.appendChild(img);
             imgContainer.classList.add("img-container");
@@ -105,13 +106,11 @@ function updateSkin(skin) {
 
             const styledButton = document.createElement("div");
             styledButton.classList.add("styled-button");
-            styledButton.appendChild(
-                imgContainer,
-                Corner1,
-                Corner2,
-                Corner3,
-                Corner4
-            );
+            styledButton.appendChild(imgContainer);
+            styledButton.appendChild(Corner1);
+            styledButton.appendChild(Corner2);
+            styledButton.appendChild(Corner3);
+            styledButton.appendChild(Corner4);
 
             levelsDiv.appendChild(styledButton);
         });
@@ -144,13 +143,11 @@ function updateSkin(skin) {
 
             const styledButton = document.createElement("div");
             styledButton.classList.add("styled-button");
-            styledButton.appendChild(
-                imgContainer,
-                Corner1,
-                Corner2,
-                Corner3,
-                Corner4
-            );
+            styledButton.appendChild(imgContainer);
+            styledButton.appendChild(Corner1);
+            styledButton.appendChild(Corner2);
+            styledButton.appendChild(Corner3);
+            styledButton.appendChild(Corner4);
 
             if (chromas === first) {
                 styledButton.classList.add("variant-selected");
@@ -160,6 +157,46 @@ function updateSkin(skin) {
         });
     }
 }
+
+// Create Video Popup
+function popup(videoURL, levelName) {
+    const videoSource = document.createElement('source');
+    videoSource.src = videoURL
+
+    const levelVideo = document.createElement('video');
+    levelVideo.classList.add('level-video');
+    levelVideo.appendChild(videoSource);
+    levelVideo.autoplay = "true";
+    levelVideo.controls = "ture";
+
+    const levelText = document.createElement('h2');
+    levelText.textContent = levelName;
+
+    const popupContainer = document.createElement('div');
+    popupContainer.classList.add("popup-container");
+    popupContainer.appendChild(levelVideo);
+    popupContainer.appendChild(levelText);
+
+    document.getElementsByTagName('main')[0].appendChild(popupContainer);
+
+    // To close popup window
+    let isHovered = false;
+    window.addEventListener(
+        "mousedown",
+        (event) => {
+            if (isHovered) return;
+            console.log(!isHovered);
+            document.getElementsByTagName('main')[0].removeChild(popupContainer);
+
+            event.preventDefault();
+        },
+        { passive: false }
+    );
+
+    popupContainer.addEventListener("mouseenter", () => (isHovered = true));
+    popupContainer.addEventListener("mouseleave", () => (isHovered = false));
+}
+
 
 let skinsHeight = null;
 let buttonState = false;
