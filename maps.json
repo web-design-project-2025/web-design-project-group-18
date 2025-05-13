@@ -1,0 +1,74 @@
+{
+  "maps": [
+    {
+      "id": "split",
+      "title": "SPLIT",
+      "coordinates": "35°41'23.0\"N 139°41'32.0\"E",
+      "description": "If you want to go far, you’ll have to go up. A pair of sites split by an elevated center allows for rapid movement using two rope ascenders. Each site is built with a looming tower vital for control. Remember to watch above before it all blows sky-high.",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon 29.png", "alt": "sova" },
+        { "src": "image/displayicon 31.png", "alt": "cypher" },
+        { "src": "image/displayicon 32.png", "alt": "raze" },
+        { "src": "image/displayicon 33.png", "alt": "raze" },
+        { "src": "image/displayicon 34.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "bind",
+      "title": "BIND",
+      "coordinates": "34°02'00.0\"N 6°51'00.0\"W",
+      "description": "Two sites. No middle. Gotta pick left or right. What’s it going to be then? Both offer direct paths for attackers and a pair of one-way teleporters make it easier to flank.",
+      "mainImage": "image/valorant-map-bind.jpg",
+      "smallImages": [
+        { "src": "image/displayicon.png", "alt": "sova" },
+        { "src": "image/displayicon1.png", "alt": "cypher" },
+        { "src": "image/displayicon5.png", "alt": "raze" },
+        { "src": "image/displayicon4.png", "alt": "raze" },
+        { "src": "image/displayicon10.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "haven",
+      "title": "HAVEN",
+      "coordinates": "27°28'00.0\"N 89°38'00.0\"E",
+      "description": "Beneath a forgotten monastery, a clamour emerges from rival Agents clashing to control three sites. There’s more territory to control, but defenders can use the extra real estate for aggressive pushes.",
+      "mainImage": "image/valorant-map-breeze.avif",
+      "smallImages": [
+        { "src": "image/displayicon11.png", "alt": "sova" },
+        { "src": "image/displayicon2.png", "alt": "cypher" },
+        { "src": "image/displayicon3.png", "alt": "raze" },
+        { "src": "image/displayicon4.png", "alt": "raze" },
+        { "src": "image/displayicon5.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "fracture",
+      "title": "FRACTURE",
+      "coordinates": "35°48'18.0\"N 106°08'19.0\"W",
+      "description": "A top secret research facility split apart by a failed radianite experiment. With defender options as divided as the map, the choice is yours: meet the attackers on their own turf or batten down the hatches to weather the assault.",
+      "mainImage": "image/valorant-map-ascent.jpg",
+      "smallImages": [
+        { "src": "image/displayicon2.png", "alt": "sova" },
+        { "src": "image/displayicon5.png", "alt": "cypher" },
+        { "src": "image/displayicon6.png", "alt": "raze" },
+        { "src": "image/displayicon8.png", "alt": "raze" },
+        { "src": "image/displayicon11.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "sunset",
+      "title": "SUNSET",
+      "coordinates": "34°02'02.0\"N 118°12'16.0\"W",
+      "description": "A disaster at a local kingdom facility threatens to engulf the whole neighborhood. Stop at your favorite food truck then fight across the city in this traditional three lane map.",
+      "mainImage": "image/valorant-map-sunset.avif",
+      "smallImages": [
+        { "src": "image/displayicon11.png", "alt": "sova" },
+        { "src": "image/displayicon6.png", "alt": "cypher" },
+        { "src": "image/displayicon5.png", "alt": "raze" },
+        { "src": "image/displayicon2.png", "alt": "raze" },
+        { "src": "image/displayicon3.png", "alt": "raze" }
+      ]
+    }
+  ]
+}
