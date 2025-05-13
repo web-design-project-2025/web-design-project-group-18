@@ -63,6 +63,7 @@ h1 {
     gap: 23.5rem;
 }
 .preview>img {
+    background-color: red;
     width: 87.5rem;
     height: 30.5625rem;
     aspect-ratio: 1400/489;
@@ -148,6 +149,7 @@ h1 {
     width: 90rem;
     padding: 1.5rem;
     justify-items: center;
+    gap: 0.75rem;
 }
 .skins .styled-button {
     width: 6.8125rem;
@@ -197,4 +199,56 @@ h1 {
 
 #show-more:hover {
     background-color: #ff4655;
+}
+
+/* Responsiveness */
+
+@media (min-width: 320px) and (max-width: 1440px) {
+    .preview>img {
+        aspect-ratio: initial;
+        width: 97vw;
+    }
+    .button-container {
+        gap: initial;
+        width: 97vw;
+        justify-content: space-between;
+        padding: 0 2rem 0 2rem;
+    }
+    .levels, .variants {
+        flex: initial;
+    }
+    .skins {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 97vw;
+        height: 9rem;
+        overflow: hidden;
+    }
+}
+@media (min-width: 320px) and (max-width: 1288px) {
+    main {
+        gap: 2rem;
+    }
+    .preview {
+        gap: 2rem;
+    }
+    .preview>img {
+        position: initial;
+        height: initial;
+        object-fit: contain;
+
+    }
+    .button-container {
+        height: initial;
+    }
+}
+@media (min-width: 320px) and (max-width: 695px) {
+    .button-container {
+        flex-direction: column;
+    }
+    .levels, .variants {
+        height: initial;
+        margin: 0.2rem;
+    }
 }
