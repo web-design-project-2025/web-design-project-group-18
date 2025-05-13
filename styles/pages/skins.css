@@ -139,6 +139,10 @@ h1 {
     bottom: 0.47rem;
     right: -3.52rem;
 }
+.variant-selected {
+    border-color: #FFF79A;
+    transition: color 1s ease;
+}
 .button-selected {
     border-color: #FFF79A;
     transition: color 1s ease;
@@ -162,17 +166,18 @@ h1 {
 }
 .skins-img {
     display: inline-flex;
-    padding: 0.125rem;
     align-items: center;
     gap: 0.125rem;
     border-width: 0.125rem;
     border-color: rgba(255, 255, 255, 0.30);
     border-style: solid;
+    transition: hidden 2s ease;
+    padding: 1rem 0.125rem;
 }
 .skins-img>img {
-    width: 5.9rem;
-    height: 5.9rem;
-    object-fit: fill;
+    width: 5.8rem;
+    height: 4rem;
+    object-fit: cover;
 }
 .skins>.styled-button>.c1 {
     top: -6.37rem;

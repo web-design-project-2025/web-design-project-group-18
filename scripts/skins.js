@@ -24,6 +24,13 @@ async function fetchWeapons() {
 
                 // Create Skins List
                 skins.forEach((skin) => {
+                    if (skin.displayName.includes('Random')) {
+                        return;
+                    };
+                    if (skin.displayName.includes('Standard')) {
+                        return;
+                    };
+
                     const img = document.createElement("img");
                     img.src = skin.displayIcon;
                     img.onclick = (e) => {
@@ -110,11 +117,18 @@ function updateSkin(skin) {
         });
     }
 
+
     // Create Variants Buttons
+    const first = skin.chromas[0];
     if (skin.chromas.length > 1) {
         skin.chromas.forEach((chromas) => {
             const img = document.createElement("img");
             img.src = chromas.swatch;
+            img.onclick = (e) => {
+                window.document.getElementById("preview").src = chromas.fullRender;
+                document.querySelector(".variant-selected").classList.remove("variant-selected");
+                img.parentElement.parentElement.classList.add("variant-selected");
+            };
             const imgContainer = document.createElement("div");
             imgContainer.appendChild(img);
             imgContainer.classList.add("img-container");
@@ -138,9 +152,31 @@ function updateSkin(skin) {
                 Corner4
             );
 
+            if (chromas === first) {
+                styledButton.classList.add("variant-selected");
+            }
+
             variantDiv.appendChild(styledButton);
         });
     }
+}
+
+let skinsHeight = null;
+let buttonState = false;
+
+function showMore() {
+    const button = document.getElementById('show-more');
+    const skins = document.querySelector(".skins");
+    if (skinsHeight === null) {
+        skinsHeight = skins.style.height
+    }
+    if (buttonState) {
+        button.textContent = 'Show Less'
+    } else {
+        button.textContent = 'Show More'
+    }
+    buttonState = !buttonState;
+    skins.style.height = buttonState ? "inherit" : skinsHeight;
 }
 
 /* Scroll source: https://stackoverflow.com/questions/28576636*/
