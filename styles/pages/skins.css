@@ -1,0 +1,126 @@
+main {
+    display: flex;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.75rem;
+    min-height: 100vh;
+}
+main>div {
+    max-width: 90rem;
+}
+h1 {
+    font-family: "Tungsten", Impact, sans-serif;
+    letter-spacing: 3pt;
+    font-size: 45pt;
+    display: inline;
+}
+
+/* Menu Section */
+
+.menu {
+    max-width: 99%;
+    display: flex;
+    height: 2.6rem;
+    align-items: center;
+    overflow: scroll;
+    gap: 0.5rem;
+}
+.menu>a {
+    text-decoration: none;
+    color: #C0C0C0;
+    display: flex;
+    width: 6.25rem;
+    height: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+a:visited {
+    text-decoration: none;
+    color: #C0C0C0;
+}
+.line {
+    height: 2px;
+    width: 6.4rem;
+    background-color: #C0C0C0;
+}
+
+/* Weapon Section */
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23.5rem;
+}
+.preview>img {
+    width: 87.5rem;
+    height: 30.5625rem;
+    aspect-ratio: 1400/489;
+    object-fit: contain;
+    position: absolute;
+    top: 340px;
+}
+.button-container {
+    z-index: 1;
+    display: flex;
+    width: 87.5rem;
+    height: 11.3125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 38.5625rem;
+}
+.levels, .variants {
+    display: flex;
+    height: 7.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex: 1 0 0;
+}
+.styled-button {
+    width: 4.1875rem;
+    height: 4.1875rem;
+    border-width: 0.125rem;
+    border-color: #FFF79A;
+    border-style: solid;
+    padding: 0.125rem;
+}
+.img-container {
+    display: inline-flex;
+    padding: 0.125rem;
+    align-items: center;
+    gap: 0.125rem;
+    border-width: 0.125rem;
+    border-color: rgba(255, 255, 255, 0.30);
+    border-style: solid;
+}
+.img-container>img {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: fill;
+}
+.c1, .c2, .c3, .c4 {
+    width: 0.125rem;
+    height: 0.125rem;
+    background-color: #D9D9D9;
+    position: relative;
+}
+.c1 {
+    top: -3.64rem;
+    left: 0.02rem;
+}
+.c2 {
+    top: -3.75rem;
+    right: -3.52rem;
+}
+.c3 {
+    left: 0.02rem;
+    bottom: 0.38rem;
+}
+.c4 {
+    bottom: 0.47rem;
+    right: -3.52rem;
+}
