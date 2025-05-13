@@ -143,14 +143,41 @@ h1 {
 /* Skins Section */
 
 .skins {
-    background-color: red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 7.3125rem;
     width: 90rem;
     padding: 1.5rem;
+    justify-items: center;
 }
 .skins .styled-button {
     width: 6.8125rem;
     height: 6.8125rem;
+}
+.skins-img {
+    display: inline-flex;
+    padding: 0.125rem;
+    align-items: center;
+    gap: 0.125rem;
+    border-width: 0.125rem;
+    border-color: rgba(255, 255, 255, 0.30);
+    border-style: solid;
+}
+.skins-img>img {
+    width: 5.9rem;
+    height: 5.9rem;
+    object-fit: fill;
+}
+.skins>.styled-button>.c1 {
+    top: -6.37rem;
+}
+.skins>.styled-button>.c2 {
+    top: -6.51rem;
+    right: -6.28rem;
+}
+.skins>.styled-button>.c4 {
+    right: -6.25rem;
+}
+.styled-button:hover .skins-img {
+    background-color: #ffffff13;
+    cursor: pointer;
 }
