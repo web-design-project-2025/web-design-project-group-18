@@ -32,7 +32,7 @@ async function fetchWeapons() {
                     };
 
                     const img = document.createElement("img");
-                    img.src = skin.displayIcon;
+                    img.src = skin.chromas[0].fullRender;
                     img.onclick = (e) => {
                         updateSkin(skin);
                         document.querySelector(".button-selected").classList.remove("button-selected");
@@ -74,7 +74,7 @@ async function fetchWeapons() {
 }
 
 function updateSkin(skin) {
-    window.document.getElementById("preview").src = skin.displayIcon;
+    window.document.getElementById("preview").src = skin.chromas[0].fullRender;
     document.querySelector(".preview>h1").textContent = skin.displayName.toUpperCase();
 
     const levelsDiv = window.document.querySelector(".levels");
