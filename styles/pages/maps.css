@@ -5,10 +5,11 @@ body {
   background-color: white;
 }
 .middle-section {
+  width: 100%;
+  height: 100%;
   background-image: url(../../imag/lightbackgroundd.png);
-
-  background-repeat: no-repeat;
-  padding: 10px 0;
+  background-size: cover;
+  background-position: 50% 5%;
 }
 .content-wrapper {
   max-width: 1000px;
@@ -217,4 +218,5 @@ body {
 .pagination span.active {
   background-color: #f44336;
   color: white;
+  box-shadow: 0 2px 8px rgba(255, 70, 85, 0.4);
 }
