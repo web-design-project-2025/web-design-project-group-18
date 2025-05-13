@@ -177,3 +177,215 @@
     font-family: 'FF Mark', Arial, sans-serif;
     min-height: 120px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  #agent-details-container {
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    padding: 0 1rem;
+  }
+  .agent-info {
+    max-width: 400px;
+    margin-left: 1.5rem;
+  }
+  .agent-name-banner {
+    font-size: 2.5rem;
+    padding: 0.7rem 1.2rem;
+    min-width: 180px;
+  }
+  .agent-name-banner span {
+    font-size: 2.5rem;
+  }
+  #agent-role {
+    font-size: 1.3rem;
+  }
+  #agent-description {
+    font-size: 1rem;
+    min-width: 250px;
+  }
+  .agent-image-bg {
+    max-width: 400px;
+  }
+  .abilities {
+    padding: 0 2rem 0 0;
+    margin-right: 1rem;
+  }
+  .abilities h3 {
+    font-size: 2rem;
+  }
+  #agent-abilities {
+    gap: 1.2rem;
+  }
+  .ability-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .ability-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  .ability-description {
+    font-size: 1rem;
+    min-height: 80px;
+    padding-left: 0.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #agent-details-container {
+    padding: 1rem;
+  }
+  .agent-info {
+    max-width: 95vw;
+    margin: 0 0.5rem;
+    align-items: flex-start;
+  }
+  .agent-name-banner {
+    padding: 0;
+    min-width: 120px;
+  }
+  .agent-name-banner span {
+    font-size: 2rem;
+  }
+  #agent-role {
+    font-size: 1rem;
+    margin: 0.25rem 0rem;
+  }
+  #agent-description {
+    font-size: 0.6rem;
+    min-width: 200px;
+  }
+  .agent-image {
+    width: 42vw;
+    max-width: 100vw;
+    min-width: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: auto;
+    display: flex;
+    position: relative;
+  }
+  .agent-image-bg {
+    max-width: 30vw;
+    width: 100%;
+  }
+  .abilities {
+    padding: 0;
+    align-items: center;
+    min-width: 200px;
+  }
+  .abilities h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  #agent-abilities {
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .ability-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .ability-icon img {
+    width: 26px;
+    height: 26px;
+  }
+  .ability-icon::after {
+    left: 9px;
+    top: 9px;
+    width: 35px;
+    height: 35px;
+  }
+  .ability-description {
+    font-size: 0.6rem;
+    min-height: 60px;
+    padding-left: 1rem;
+    border-left: 2px solid #FF4655;
+  }
+}
+
+@media (max-width: 600px) {
+  #agent-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 0.2rem;
+    width: 100vw;
+    min-width: 0;
+    background-size: fixed;
+    background-position: 5% 10%;
+  }
+  .agent-info {
+    max-width: 90vw;
+    margin: 1rem;
+    align-items: center;
+  }
+  .agent-name-banner {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.2rem;
+    min-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .agent-name-banner span {
+    font-size: 1.5rem;
+  }
+  .agent-name-banner::after {
+    left: 6px;
+    top: 6px;
+  }
+  #agent-description {
+    font-size: 0.8rem;
+    min-width: unset;
+  }
+  .agent-image {
+    min-width: 0;
+    max-width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .agent-image-bg {
+    min-width: 250px;
+  }
+  #agent-image {
+    max-width: 90vw;
+    height: auto;
+  }
+  .abilities {
+    max-width: 90vw;
+    padding: 0;
+    margin: 1rem;
+    align-items: center;
+    
+  }
+  .abilities h3 {
+    margin: 1rem;
+  }
+  #agent-abilities {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ability-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .ability-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .ability-icon::after {
+    left: 6px;
+    top: 6px;
+    width: 35px;
+    height: 35px;
+  }
+  .ability-description {
+    font-size: 0.75rem;
+    min-height: 30px;
+    margin-top: 0.2rem;
+  }
+}
