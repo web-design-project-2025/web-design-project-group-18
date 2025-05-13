@@ -37,17 +37,25 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease;
 }
+
 .weapon-card:hover {
     cursor: pointer;
     border-color: #00FFCC;
     transition: 0.3s ease;
 }
 
+.weapon-card:hover .weapon-icon {
+    filter: drop-shadow(0px 0.7rem #00000050);
+    transition: 0.2s ease;
+}
+
 .weapon-icon {
-   width: 17.68rem;
-   height: 5.69rem;
-   object-fit: contain;
-   margin: 1.63rem 0.88rem 0.4rem 0.88rem;
+    width: 17.68rem;
+    height: 5.69rem;
+    object-fit: contain;
+    margin: 1.63rem 0.88rem 0.4rem 0.88rem;
+    filter: drop-shadow(0px 0rem #00000050);
+    transition: 0.2s ease;
 }
 
 .weapon-name {
@@ -61,11 +69,13 @@ main {
         height: 93rem;
     }
 }
+
 @media (min-width: 320px) and (max-width: 1050px) {
     .weapons-container {
         height: 136rem;
     }
 }
+
 @media (min-width: 320px) and (max-width: 694px) {
     .weapons-container {
         height: initial;
@@ -118,12 +128,13 @@ main {
     object-fit: contain;
     max-height: 100%;
     width: 100%;
+    filter: drop-shadow(0 1.5rem #00000050);
 }
 
 .detail-stats {
     display: grid;
-    grid-template-areas: 
-    "stats preview damage";
+    grid-template-areas:
+        "stats preview damage";
     gap: 1.25rem;
     min-height: 26.6rem;
 }
@@ -132,9 +143,11 @@ main {
 .weapon-stats {
     grid-area: stats;
 }
+
 .weapon-preview {
     grid-area: preview;
 }
+
 .damage-range-section {
     grid-area: damage;
 }
@@ -210,13 +223,17 @@ main {
 }
 
 /* General table cleanup */
-table, th, td {
+table,
+th,
+td {
     border-collapse: collapse;
 }
+
 td {
     height: 1.6rem;
     font-size: 0.85rem;
 }
+
 th {
     text-align: left;
     padding-bottom: 0.6rem;
@@ -229,25 +246,27 @@ th {
     align-items: center;
     margin: 1rem 0;
 }
+
 .weapon-skin-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 @media (min-width: 320px) and (max-width: 1250px) {
     .detail-stats {
-        grid-template-areas: 
-        "stats damage"
-        "preview preview";
+        grid-template-areas:
+            "stats damage"
+            "preview preview";
     }
 }
+
 @media (min-width: 320px) and (max-width: 760px) {
     .detail-stats {
-        grid-template-areas: 
-        "stats"
-        "damage"
-        "preview";
+        grid-template-areas:
+            "stats"
+            "damage"
+            "preview";
     }
 }
