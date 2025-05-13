@@ -1,6 +1,17 @@
 var slideIndex = 1;
 var dots = document.querySelectorAll(".pagination span");
-const mapNames = ["SPLIT", "FRACTURE", "BIND", "HAVEN", "SUNSET"];
+const mapNames = [
+  "SPLIT",
+  "FRACTURE",
+  "BIND",
+  "HAVEN",
+  "SUNSET",
+  "LOTUS",
+  "ASCENT",
+  "ICEBOX",
+  "BREEZE",
+  "ABYSS",
+];
 showDivs(slideIndex);
 
 function plusDivs(n) {
@@ -40,10 +51,9 @@ function showDivs(n) {
 
   dots[slideIndex - 1].classList.add("active");
 }
-// Add this array mapping slide indexes to map IDs
+
 const mapIds = ["split", "fracture", "bind", "haven", "sunset"];
 
-// Add click handler to map container
 document.querySelector(".map-container").addEventListener("click", function () {
   const mapId = mapIds[slideIndex - 1];
   window.location.href = `mapsDT.html?map=${mapId}`;
