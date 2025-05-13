@@ -69,6 +69,76 @@
         { "src": "image/displayicon2.png", "alt": "raze" },
         { "src": "image/displayicon3.png", "alt": "raze" }
       ]
+    },
+    {
+      "id": "lotus",
+      "title": "LOTUS",
+      "coordinates": "4°07’03″N 74°53’21″E",
+      "description": "Lotus is one of the two VALORANT maps with three sites and takes place within an ancient temple in the Western Ghats of India.",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon11.png", "alt": "sova" },
+        { "src": "image/displayicon2.png", "alt": "cypher" },
+        { "src": "image/displayicon6.png", "alt": "raze" },
+        { "src": "image/displayicon1.png", "alt": "raze" },
+        { "src": "image/displayicon5.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "ascent",
+      "title": "ASCENT",
+      "coordinates": "45°26’15” N, 12°20’9″ E",
+      "description": "The map is located in Venice, Italy, with landmarks from the city, including the Basilica of St. Mark (top right in the image above), as well as the Campanile of St. Mark (the big red tower).",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon5.png", "alt": "sova" },
+        { "src": "image/displayicon8.png", "alt": "cypher" },
+        { "src": "image/displayicon9.png", "alt": "raze" },
+        { "src": "image/displayicon3.png", "alt": "raze" },
+        { "src": "image/displayicon1.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "icebox",
+      "title": "ICEBOX",
+      "coordinates": "76°44’0″ N, 149°30’0″ E",
+      "description": "Icebox is located off the coast of Bennett Island, a remote location near Siberia.",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon11.png", "alt": "sova" },
+        { "src": "image/displayicon10.png", "alt": "cypher" },
+        { "src": "image/displayicon2.png", "alt": "raze" },
+        { "src": "image/displayicon3.png", "alt": "raze" },
+        { "src": "image/displayicon6.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "breeze",
+      "title": "BREEZE",
+      "coordinates": "26°11’06” N, 71°10’31” W",
+      "description": "Breeze is the closest VALORANT map to the “middle of nowhere,” but geographically, it’s closest to the Bermuda Triangle. ",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon5.png", "alt": "sova" },
+        { "src": "image/displayicon8.png", "alt": "cypher" },
+        { "src": "image/displayicon10.png", "alt": "raze" },
+        { "src": "image/displayicon1.png", "alt": "raze" },
+        { "src": "image/displayicon2.png", "alt": "raze" }
+      ]
+    },
+    {
+      "id": "abyss",
+      "title": "ABYSS",
+      "coordinates": "70°50’09” N 9°00’42” W",
+      "description": "Abyss is VALORANT’s newest map and is located deep beneath the island of Sør-Jan in Norway. It is also the only map in the game with no outer boundaries. Each site is built with a looming tower vital for control. Remember to watch above before it all blows sky-high.",
+      "mainImage": "image/valorant-map-split.jpg",
+      "smallImages": [
+        { "src": "image/displayicon11.png", "alt": "sova" },
+        { "src": "image/displayicon6.png", "alt": "cypher" },
+        { "src": "image/displayicon4.png", "alt": "raze" },
+        { "src": "image/displayicon3.png", "alt": "raze" },
+        { "src": "image/displayicon10.png", "alt": "raze" }
+      ]
     }
   ]
 }

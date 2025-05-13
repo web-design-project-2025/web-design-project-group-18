@@ -1,10 +1,7 @@
-// Load map data and initialize page
 document.addEventListener("DOMContentLoaded", () => {
-  // Get map ID from URL
   const urlParams = new URLSearchParams(window.location.search);
   const mapId = urlParams.get("map") || "split";
 
-  // Load JSON data
   fetch("maps.json")
     .then((response) => response.json())
     .then((data) => {
@@ -38,12 +35,10 @@ function renderMapContent(mapData) {
 }
 
 function generateSmallImages(mapData) {
-  // Check if map has small images
   if (!mapData.smallImages || mapData.smallImages.length === 0) {
     return "<div>No additional images available</div>";
   }
 
-  // Generate images from JSON data
   return mapData.smallImages
     .map(
       (image) => `

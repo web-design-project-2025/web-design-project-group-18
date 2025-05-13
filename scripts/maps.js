@@ -52,7 +52,18 @@ function showDivs(n) {
   dots[slideIndex - 1].classList.add("active");
 }
 
-const mapIds = ["split", "fracture", "bind", "haven", "sunset"];
+const mapIds = [
+  "split",
+  "fracture",
+  "bind",
+  "haven",
+  "sunset",
+  "lotus",
+  "ascent",
+  "icebox",
+  "breeze",
+  "abyss",
+];
 
 document.querySelector(".map-container").addEventListener("click", function () {
   const mapId = mapIds[slideIndex - 1];
