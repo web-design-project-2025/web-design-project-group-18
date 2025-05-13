@@ -23,9 +23,11 @@ h1 {
     display: flex;
     height: 2.6rem;
     align-items: center;
-    overflow: scroll;
+    overflow: hidden;
     gap: 0.5rem;
     list-style: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .menu a {
     text-decoration: none;
@@ -39,6 +41,8 @@ h1 {
     gap: 0.4rem;
     border-bottom: 2px solid #C0C0C0;
     transition: color 0.3s ease;
+    -webkit-user-drag: none;
+	-webkit-app-region: no-drag;
 }
 .menu a:visited {
     text-decoration: none;
