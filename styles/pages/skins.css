@@ -208,10 +208,12 @@ h2 {
     flex-direction: column;
     position: fixed;
     z-index: 99;
-    top: 5rem;
+    top: 10rem;
     padding: 1.5rem;
     border-radius: 5px;
-    height: 85vh;
+    height: 70vh;
+    width: 90vw;
+    max-height: 51rem;
     aspect-ratio: 16 / 9;
     gap: 1rem;
 }
@@ -220,6 +222,7 @@ h2 {
     height: 100%;
     object-fit: cover;
 }
+
 /* Button */
 
 #show-more {
@@ -277,7 +280,12 @@ h2 {
         height: initial;
     }
 }
-@media (min-width: 320px) and (max-width: 695px) {
+@media (min-width: 320px) and (max-width: 900px) {
+    .popup-container {
+        height: initial;
+    }
+}
+@media (min-width: 320px) and (max-width: 780px) {
     .button-container {
         flex-direction: column;
     }
