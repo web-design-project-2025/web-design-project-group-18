@@ -137,4 +137,20 @@ h1 {
 }
 .button-selected {
     border-color: #FFF79A;
+    transition: color 1s ease;
+}
+
+/* Skins Section */
+
+.skins {
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 7.3125rem;
+    width: 90rem;
+    padding: 1.5rem;
+}
+.skins .styled-button {
+    width: 6.8125rem;
+    height: 6.8125rem;
 }
