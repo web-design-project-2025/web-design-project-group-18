@@ -4,6 +4,35 @@ body {
   font-family: Arial, sans-serif;
   background-color: white;
 }
+/* I fix the global css on this page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #0f1923;
+}
+
+main {
+  flex: 1;
+  margin-top: 40px;
+}
+
+footer {
+  padding: 2rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 1000;
+}
+
 .middle-section {
   width: 100%;
   height: 100%;
@@ -87,13 +116,13 @@ body {
 }
 
 .pagination {
-  margin-top: 90px;
+  margin-top: 7rem;
   text-align: center;
 }
 .pagination span {
   display: inline-block;
-  margin: 0 5px;
-  padding: 4px 10px;
+  margin: 0 0.2rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   color: #333;
   cursor: pointer;
