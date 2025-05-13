@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>News Detail</title>
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/pages/news.css">
+    <link rel="stylesheet" href="styles/pages/news-detail.css">
 </head>
 <body>
     <header>
@@ -25,29 +25,22 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>   
-    
-    <section class="banner">
-        <div class="banner-img"></div>
-        <h1 class="banner-heading">News</h1>
-    </section>
+    </header>
 
-    <section id="news">
-        <div id="card-grid">    
-            <div class="card hidden"> 
-                <div class="card-img">
-                    <img src="" alt="" class="news-thumbnail">
-                </div>
-                <div class="card-content">
-                    <p class="category"></p>
+    <section id="news-detail">
+        <div class="detail-bg">
+            <div class="detail-container">
+                <img class="detail-thumbnail" src="" alt="">
+                <h1 class="detail-title"></h1>
+                <hr class="detail-divider" />
+                <div class="detail-meta">
+                    <p class="detail-category"></p>
                     <p class="divider">|</p>
-                    <p class="date"></p>
+                    <p class="detail-date"></p>
                 </div>
-                <h3 class="card-title"></h3>
+                <div class="detail-content"></div>
             </div>
         </div>
-        <hr>
-        <button id="show-more">Show More</button>
     </section>
 
     <footer>
@@ -82,6 +75,6 @@
         </div>
     </footer>
 
-    <script src="scripts/news.js"></script>
+    <script src="scripts/news-detail.js"></script>
 </body>
 </html>

@@ -1,0 +1,177 @@
+
+/* I fix the global css on this page so it can work with the animation*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px; 
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #0f1923;
+  }
+  
+  main {
+    flex: 1;
+    margin-top: 40px; 
+  }
+  
+  footer {
+
+    padding: 2rem;
+    margin-top: auto; 
+    position: relative;
+    z-index: 1000;
+  }
+  
+
+  .mask-about {
+    display: inline-block;
+    font-size: 10vw;
+    font-weight: 800;
+    color: transparent;
+    position: relative;
+    -webkit-mask-image: linear-gradient(45deg, #000 50%, transparent 50%);
+    mask-image: linear-gradient(45deg, #000 50%, transparent 50%);
+    -webkit-mask-size: 300% 300%;
+    mask-size: 300% 300%;
+    animation: textReveal 1.8s ease-out forwards;
+  }
+  
+  @keyframes textReveal {
+    0% { mask-position: 100% 100%; color: transparent; }
+    100% { mask-position: 0% 0%; color: #fff; }
+  }
+  
+  .content-wrapper {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    padding-bottom: 2rem; 
+  }
+  
+
+  
+  .content-text {
+    color: #888;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textFadeUp 1.2s ease forwards;
+  }
+  
+  @keyframes textFadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .content-text:nth-child(1) { animation-delay: 0.8s; }
+  .content-text:nth-child(2) { animation-delay: 1.3s; }
+  .content-text:nth-child(3) { animation-delay: 1.8s; }
+  
+  .content-text:hover {
+    color: #fff;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+  }
+  body {
+    background: #0f1923;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial", sans-serif;
+  }
+
+  .about-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+ 
+  .mask-about {
+    display: inline-block;
+    font-size: 10vw;
+    font-weight: 800;
+    color: transparent;
+    position: relative;
+  
+    -webkit-mask-image: linear-gradient(45deg, #000 50%, transparent 50%);
+    mask-image: linear-gradient(45deg, #000 50%, transparent 50%);
+    -webkit-mask-size: 300% 300%;
+    mask-size: 300% 300%;
+  
+    animation: textReveal 1.8s ease-out forwards;
+  }
+  
+  @keyframes textReveal {
+    0% {
+      -webkit-mask-position: 100% 100%;
+      mask-position: 100% 100%;
+      color: transparent;
+    }
+    100% {
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
+      color: #fff;
+    }
+  }
+  
+
+  .mask-about:hover {
+    -webkit-mask-position: 100% 100%;
+    mask-position: 100% 100%;
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 4rem auto 0;
+  }
+  
+  .content-text {
+    color: #888;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 2rem 0;z
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textFadeUp 1.2s ease forwards;
+  }
+  
+  @keyframes textFadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  .content-text:nth-child(1) {
+    animation-delay: 0.8s;
+  }
+  .content-text:nth-child(2) {
+    animation-delay: 1.3s;
+  }
+  .content-text:nth-child(3) {
+    animation-delay: 1.8s;
+  }
+  
+ 
+  .content-text:hover {
+    color: #fff;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+  }
+  

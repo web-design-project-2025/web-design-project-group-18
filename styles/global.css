@@ -1,4 +1,26 @@
 /* global.css */
+
+/* Fonts Awesome */
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../../fonts/Tungsten-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DIN Next';
+    src: url('../../fonts/DIN Next W01 Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DIN Next Medium';
+    src: url('../../fonts/DIN Next W10 Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    src: url('../../fonts/FontFont_FF.Mark.Pro.otf') format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +28,13 @@
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
+    font-family: "FF Mark", Arial, sans-serif;
     background-color: #0f1923;
     color: #f2f2f2;
 }
 
 header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -59,41 +81,10 @@ header {
     color: #FF4655;
 }
 
-/* Button */
-.light-btn {
-    padding: 1rem 1.5rem;
-    background: #FF4655;
-    color: #fff;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    min-width: 150px;}
-
-.light-btn:hover {
-    background: #000;
-    color: #fff;
-}
-
-.dark-btn {
-    padding: 1rem 1.5rem;
-    background: #000;
-    color: #fff;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    min-width: 150px;
-}
-.dark-btn:hover {
-    background: #fff;
-    color: #000;
-}
 
 
 /* Footer */
 footer {
-    font-family: 'Segoe UI', sans-serif;
     background-color: #000;
     color: #fff;
     width: 100%;
