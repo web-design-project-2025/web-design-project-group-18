@@ -224,6 +224,19 @@ h2 {
     object-fit: cover;
 }
 
+/* Skin Wallpaper */
+
+.wallpaper-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    height: 100vh;
+}
+.wallpaper-container>img {
+    object-fit: cover;
+}
+
 /* Button */
 
 #show-more {

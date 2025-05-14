@@ -77,6 +77,19 @@ function updateSkin(skin) {
     window.document.getElementById("preview").src = skin.chromas[0].fullRender;
     document.querySelector(".preview>h1").textContent = skin.displayName.toUpperCase();
 
+    // Add Wallpaper
+    const wallpaperContainer = window.document.querySelector(".wallpaper-container");
+    wallpaperContainer.innerHTML = "";
+
+    if (skin.wallpaper === null) {
+    }
+    else {
+        const wallpaper = document.createElement('img');
+        wallpaper.src = skin.wallpaper;
+        
+        wallpaperContainer.appendChild(wallpaper);
+    };
+
     const levelsDiv = window.document.querySelector(".levels");
     const variantDiv = window.document.querySelector(".variants");
 
