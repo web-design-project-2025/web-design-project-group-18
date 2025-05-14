@@ -4,6 +4,17 @@ main {
     flex-wrap: wrap;
     justify-content: center;
 }
+h1 {
+    font-family: "Tungsten";
+}
+h2 {
+    font-family: "DIN Next";
+    font-weight: medium;
+}
+h3 {
+    font-family: "DIN Next";
+    font-weight: normal;
+}
 
 /* Weapon Menu */
 
