@@ -77,6 +77,19 @@ function updateSkin(skin) {
     window.document.getElementById("preview").src = skin.chromas[0].fullRender;
     document.querySelector(".preview>h1").textContent = skin.displayName.toUpperCase();
 
+    // Add Wallpaper
+    const wallpaperContainer = window.document.querySelector(".wallpaper-container");
+    wallpaperContainer.innerHTML = "";
+
+    if (skin.wallpaper === null) {
+    }
+    else {
+        const wallpaper = document.createElement('img');
+        wallpaper.src = skin.wallpaper;
+        
+        wallpaperContainer.appendChild(wallpaper);
+    };
+
     const levelsDiv = window.document.querySelector(".levels");
     const variantDiv = window.document.querySelector(".variants");
 
@@ -86,14 +99,14 @@ function updateSkin(skin) {
     // Create Levels Buttons
     if (skin.levels.length > 1) {
         skin.levels.forEach((level) => {
-            const img = document.createElement("img");
-            img.src = level.displayIcon;
-            img.onclick = (e) => {
+            const txt = document.createElement("p");
+            txt.textContent = skin.levels.indexOf(level) + 1;
+            txt.onclick = (e) => {
                 popup(level.streamedVideo, level.displayName);
             }
-            const imgContainer = document.createElement("div");
-            imgContainer.appendChild(img);
-            imgContainer.classList.add("img-container");
+            const txtContainer = document.createElement("div");
+            txtContainer.appendChild(txt);
+            txtContainer.classList.add("img-container");
 
             const Corner1 = document.createElement("div");
             Corner1.classList.add("c1");
@@ -106,7 +119,7 @@ function updateSkin(skin) {
 
             const styledButton = document.createElement("div");
             styledButton.classList.add("styled-button");
-            styledButton.appendChild(imgContainer);
+            styledButton.appendChild(txtContainer);
             styledButton.appendChild(Corner1);
             styledButton.appendChild(Corner2);
             styledButton.appendChild(Corner3);

@@ -124,9 +124,17 @@ h2 {
     object-fit: fill;
     transition: opacity 0.2s ease;
 }
-.img-container>img:hover {
+.img-container>img:hover, .img-container>p:hover{
     opacity: 70%;
     transition: opacity 0.2s ease;
+}
+.img-container>p {
+    width: 3.2rem;
+    height: 3.2rem;
+    text-align: center;
+    align-content: center;
+    font-family: 'Lucida Grande', 'New Times Roman', serif;
+    font-size: 30pt;
 }
 .c1, .c2, .c3, .c4 {
     width: 0.125rem;
@@ -224,6 +232,19 @@ h2 {
     object-fit: cover;
 }
 
+/* Skin Wallpaper */
+
+.wallpaper-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    height: 100vh;
+}
+.wallpaper-container>img {
+    object-fit: cover;
+}
+
 /* Button */
 
 #show-more {
@@ -287,6 +308,10 @@ h2 {
     }
 }
 @media (min-width: 320px) and (max-width: 780px) {
+    h1 {
+        letter-spacing: 0.2vw;
+        font-size: 13.5vw;
+    }
     .button-container {
         flex-direction: column;
     }
