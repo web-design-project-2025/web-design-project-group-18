@@ -30,43 +30,41 @@
         </nav>
     </header>
 
-    <main>
-        <section class="comprehensive-weapon ">
-            <h2>Weapon Comparison</h2>
-            <p>Compare stats of selected weapons side by side.</p>
-            <div class="comparison-container" id="comparison-container">
+    <section class="comprehensive-weapon ">
+        <h2>Weapon Comparison</h2>
+        <p>Compare stats of selected weapons side by side.</p>
+        <div class="comparison-container" id="comparison-container">
+        </div>
+        <div class="button-container">
+            <button id="add-weapon-box">Add Compare</button>
+            <button id="remove-weapon-box">Remove Compare</button>
+        </div>
+        <div id="weapon-selector" style="display: none;"></div>
+        <div id="weapons-container" style="display: none;"></div>
+    </section>
+    <template id="weapon-box-template">
+        <div class="weapon-box">
+            <h3 class="weapon-name">Weapon</h3>
+            <select class="weapon-dropdown">
+                <option value="" disabled selected>Select a weapon</option>
+            </select>
+            <div class="weapon-stats">
+                <p>Type: <span class="type"></span></p>
+                <p>Fire Rate: <span class="fireRate"></span> <span class="fireRate-best stat-best"></span></p>
+                <p>Magazine Size: <span class="magazineSize"></span> <span
+                        class="magazineSize-best stat-best"></span></p>
+                <p>Damage - Head: <span class="damage-head"></span> <span class="damage-head-best stat-best"></span>
+                </p>
+                <p>Damage - Body: <span class="damage-body"></span> <span class="damage-body-best stat-best"></span>
+                </p>
+                <p>Damage - Leg: <span class="damage-leg"></span> <span class="damage-leg-best stat-best"></span>
+                </p>
+                <p>Price: <span class="price"></span> <span class="price-best stat-best"></span></p>
+                <p>Wall Penetration: <span class="wallPenetration"></span></p>
+                <p>Fire Mode: <span class="fireMode"></span></p>
             </div>
-            <div class="button-container">
-                <button id="add-weapon-box">Add Compare</button>
-                <button id="remove-weapon-box">Remove Compare</button>
-            </div>
-            <div id="weapon-selector" style="display: none;"></div>
-            <div id="weapons-container" style="display: none;"></div>
-        </section>
-        <template id="weapon-box-template">
-            <div class="weapon-box">
-                <h3 class="weapon-name">Weapon</h3>
-                <select class="weapon-dropdown">
-                    <option value="" disabled selected>Select a weapon</option>
-                </select>
-                <div class="weapon-stats">
-                    <p>Type: <span class="type"></span></p>
-                    <p>Fire Rate: <span class="fireRate"></span> <span class="fireRate-best stat-best"></span></p>
-                    <p>Magazine Size: <span class="magazineSize"></span> <span
-                            class="magazineSize-best stat-best"></span></p>
-                    <p>Damage - Head: <span class="damage-head"></span> <span class="damage-head-best stat-best"></span>
-                    </p>
-                    <p>Damage - Body: <span class="damage-body"></span> <span class="damage-body-best stat-best"></span>
-                    </p>
-                    <p>Damage - Leg: <span class="damage-leg"></span> <span class="damage-leg-best stat-best"></span>
-                    </p>
-                    <p>Price: <span class="price"></span> <span class="price-best stat-best"></span></p>
-                    <p>Wall Penetration: <span class="wallPenetration"></span></p>
-                    <p>Fire Mode: <span class="fireMode"></span></p>
-                </div>
-            </div>
-        </template>
-    </main>
+        </div>
+    </template>
 
     <footer>
         <div class="footer-socials">
