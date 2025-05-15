@@ -1,12 +1,24 @@
-main {
-    background: #0f1923;
-    min-height: 100vh;
-}
-
 .comprehensive-weapon {
     background: #0f1923;
     padding: 2rem;
     max-width: 100%;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    color: #ff4655;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    font-family: 'Tungsten', Impact, sans-serif;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.125rem;
+    color: #ece8e1;
+    text-align: center;
+    font-family: 'DIN Next', Arial, sans-serif;
 }
 
 .comparison-container {
@@ -36,29 +48,77 @@ main {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button {
-    background-color: #ff4655;
-    color: white;
+.weapon-box h3 {
+    margin: 0.5rem 0;
+    color: #ff4655;
+    font-size: 1.4rem;
+    font-family: 'DIN Next Medium', Arial, sans-serif;
+    letter-spacing: 0.0625rem;
+    text-align: center;
+}
+
+.weapon-box p {
     border: none;
-    padding: 0.625rem 1.25rem;
-    cursor: pointer;
-    margin: 2rem;
+    padding: 0.5rem 0 0.5rem 0;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    color: #ffffff;
+    font-size: 1.08rem;
+    margin: 0.25rem 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.weapon-box p span {
+    margin-left: 0.25rem;
+    font-size: 0.9em;
+    vertical-align: middle;
+    color: #00ffae;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffae99;
+}
+
+#weapon-selector {
+    margin-top: 1.25rem;
+    text-align: center;
+    border: 0.125rem solid #ff4655;
+    padding: 0.94rem;
+    background: #23272e;
     font-size: 1.2rem;
+    color: #ece8e1;
+}
+
+#weapon-selector button {
+    display: inline-block;
+    margin: 0.3125rem;
+    padding: 0.5rem 0.94rem;
+    font-size: 1.1rem;
+    background-color: #c0bec7;
+    color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
+#weapon-selector button:hover {
+    background-color: #ff4655;
+}
+
 #add-weapon-box, #remove-weapon-box {
-    display: inline-block;
+    display: block;
     margin: 0;
     text-align: center;
-    background: #ff4655;
-    color: #ece8e1;
     border: none;
-    font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.625rem 1.75rem;
-    box-shadow: 0 0.125rem 0.5rem #ff465588;
-    transition: background 0.2s;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #000;
+    transition: background-color 0.3s ease;
+}
+
+#add-weapon-box:hover, #remove-weapon-box:hover {
+    background-color: #ff4655;
 }
 
 .button-container {
@@ -78,7 +138,14 @@ select {
     font-size: 1.08rem;
     box-shadow: 0 0.125rem 0.5rem rgba(255, 70, 85, 0.08);
     cursor: pointer;
+    font-family: 'DIN Next', Arial, sans-serif;
     transition: border-color 0.2s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #00ffae;
+    box-shadow: 0 0 0.5rem #00ffae99;
 }
 
 .stat-best {
