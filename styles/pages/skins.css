@@ -308,6 +308,10 @@ h2 {
     }
 }
 @media (min-width: 320px) and (max-width: 780px) {
+    h1 {
+        letter-spacing: 0.2vw;
+        font-size: 13.5vw;
+    }
     .button-container {
         flex-direction: column;
     }
