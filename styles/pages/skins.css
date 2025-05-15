@@ -124,9 +124,17 @@ h2 {
     object-fit: fill;
     transition: opacity 0.2s ease;
 }
-.img-container>img:hover {
+.img-container>img:hover, .img-container>p:hover{
     opacity: 70%;
     transition: opacity 0.2s ease;
+}
+.img-container>p {
+    width: 3.2rem;
+    height: 3.2rem;
+    text-align: center;
+    align-content: center;
+    font-family: 'Lucida Grande', 'New Times Roman', serif;
+    font-size: 30pt;
 }
 .c1, .c2, .c3, .c4 {
     width: 0.125rem;

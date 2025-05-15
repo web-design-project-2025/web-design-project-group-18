@@ -99,14 +99,14 @@ function updateSkin(skin) {
     // Create Levels Buttons
     if (skin.levels.length > 1) {
         skin.levels.forEach((level) => {
-            const img = document.createElement("img");
-            img.src = level.displayIcon;
-            img.onclick = (e) => {
+            const txt = document.createElement("p");
+            txt.textContent = skin.levels.indexOf(level) + 1;
+            txt.onclick = (e) => {
                 popup(level.streamedVideo, level.displayName);
             }
-            const imgContainer = document.createElement("div");
-            imgContainer.appendChild(img);
-            imgContainer.classList.add("img-container");
+            const txtContainer = document.createElement("div");
+            txtContainer.appendChild(txt);
+            txtContainer.classList.add("img-container");
 
             const Corner1 = document.createElement("div");
             Corner1.classList.add("c1");
@@ -119,7 +119,7 @@ function updateSkin(skin) {
 
             const styledButton = document.createElement("div");
             styledButton.classList.add("styled-button");
-            styledButton.appendChild(imgContainer);
+            styledButton.appendChild(txtContainer);
             styledButton.appendChild(Corner1);
             styledButton.appendChild(Corner2);
             styledButton.appendChild(Corner3);
