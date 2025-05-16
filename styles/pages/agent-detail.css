@@ -25,6 +25,9 @@ main {
     width: 100%;
     max-width: 600px;
     margin-left: 4rem;
+    opacity: 0;
+    animation: fadeInUpAgentDetail 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.1s;
 }
 
 .agent-name-banner {
@@ -39,7 +42,8 @@ main {
     position: relative;
     min-width: 250px;
     text-align: center;
-
+    animation: popInBanner 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.3s;
 }
 .agent-name-banner span {
     font-size: 4rem;
@@ -84,6 +88,9 @@ main {
     height: auto;
     z-index: 3;
     width: 100%;
+    opacity: 0;
+    animation: fadeInUpAgentDetail 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.3s;
 }
 
 .agent-image-bg {
@@ -114,7 +121,9 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
+    opacity: 0;
+    animation: fadeInUpAgentDetail 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.5s;
 }
 
 .abilities h3 {
@@ -172,6 +181,58 @@ main {
     color: #fff;
     font-family: 'FF Mark', Arial, sans-serif;
     min-height: 120px;
+    animation: fadeDownAbilityDesc 2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Fade-in and slide-up animation for agent detail sections */
+@keyframes fadeInUpAgentDetail {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate main info, image, and abilities */
+.agent-info,
+.agent-image,
+.abilities {
+  opacity: 0;
+  animation: fadeInUpAgentDetail 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.agent-info { animation-delay: 0.1s; }
+.agent-image { animation-delay: 0.3s; }
+.abilities { animation-delay: 0.5s; }
+
+/* Animate agent name banner pop-in */
+@keyframes popInBanner {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.agent-name-banner {
+  animation: popInBanner 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation-delay: 0.15s;
+}
+
+/* Animate ability description change with fade-down */
+@keyframes fadeDownAbilityDesc {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Styles */

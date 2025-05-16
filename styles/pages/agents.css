@@ -20,6 +20,12 @@
   text-transform: uppercase;
   min-width: 120px;
   margin: 0.5rem 0;
+  opacity: 0;
+  animation: slideInSortingBtn 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.sorting-button.animated {
+  opacity: 1;
 }
 
 .sorting-button.active {
@@ -60,6 +66,8 @@
   overflow: visible;
   background: transparent;
   box-sizing: border-box;
+  opacity: 1;
+  transform: none;
 }
 
 .agent:hover {
@@ -104,6 +112,42 @@
   line-height: 1.5;
   padding: 0.25rem 1rem;
   background: rgba(0,0,0,0.5);
+}
+
+/* Only animate agents if JS is enabled */
+.js-animate-agents .agent {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: none;
+}
+
+.js-animate-agents .agent.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: agentFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes agentFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide-in animation for sorting buttons */
+@keyframes slideInSortingBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Responsive Styles */

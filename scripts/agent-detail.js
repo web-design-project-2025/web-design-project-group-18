@@ -58,6 +58,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <strong>${ability.slot ? ability.slot + ' - ' : ''}${ability.displayName}</strong>: ${ability.description}
                 </div>
             `;
+            // Force reflow to restart animation
+            const desc = abilityDescriptionContainer.querySelector('.ability-description');
+            if (desc) {
+                desc.classList.remove('active');
+                void desc.offsetWidth;
+                desc.classList.add('active');
+            }
             // Highlight selected icon
             document.querySelectorAll('.ability-icon').forEach((el, i) => {
                 if (i === idx) el.classList.add('selected');

@@ -20,9 +20,20 @@ function setupSorting() {
             const role = button.getAttribute('data-role').toLowerCase();
             const agents = document.querySelectorAll('.agent');
 
+            let visibleCount = 0;
             agents.forEach(agent => {
                 const agentRole = agent.querySelector('.role').textContent.toLowerCase();
-                agent.style.display = (role === 'all' || agentRole === role) ? 'block' : 'none';
+                agent.classList.remove('visible');
+                if (role === 'all' || agentRole === role) {
+                    agent.style.display = 'block';
+                    agent.style.animationDelay = (visibleCount * 0.15) + 's';
+                    setTimeout(() => {
+                        agent.classList.add('visible');
+                    }, visibleCount * 75); 
+                    visibleCount++;
+                } else {
+                    agent.style.display = 'none';
+                }
             });
         });
     });
@@ -35,6 +46,20 @@ function getAgentGradientBorder(agent) {
         return `linear-gradient(135deg, ${gradientColors})`; 
     }
     return 'linear-gradient(135deg, #ffffff, #dddddd)'; 
+}
+
+// Function to reveal agents with animation
+function revealAgentsOnScroll() {
+    const agents = document.querySelectorAll('.agent');
+    let visibleCount = 0;
+    agents.forEach((agent, idx) => {
+        const rect = agent.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40 && !agent.classList.contains('visible')) {
+            agent.style.animationDelay = (visibleCount * 0.15) + 's';
+            agent.classList.add('visible');
+            visibleCount++;
+        }
+    });
 }
 
 // Function to display agents on the page
@@ -58,7 +83,24 @@ function displayAgents(agents) {
         `;
         container.appendChild(agentDiv);
     }); 
+    // After rendering, trigger animation
+    revealAgentsOnScroll();
+    window.addEventListener('scroll', revealAgentsOnScroll);
 }
 
 fetchAgents();
 setupSorting();
+
+// Add .js-animate-agents to <body> for agent animation
+window.addEventListener('DOMContentLoaded', function () {
+  document.body.classList.add('js-animate-agents');
+
+  // Animate sorting buttons with staggered slide-in
+  const sortingButtons = document.querySelectorAll('.sorting-button');
+  sortingButtons.forEach((btn, idx) => {
+    btn.style.animationDelay = (idx * 0.12) + 's';
+    setTimeout(() => {
+      btn.classList.add('animated');
+    }, idx * 120);
+  });
+});
