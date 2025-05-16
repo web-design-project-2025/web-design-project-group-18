@@ -1,8 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'FF Mark', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
+    color: #222;
 }
 
 /* Banner Section */
@@ -23,11 +24,13 @@ body {
   
 .banner-title {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: 'Tungsten', 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
   
 /* News Section */
@@ -42,41 +45,77 @@ body {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #000;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
   
 .news-cards {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
-  
+
 .card {
-    flex: 1;
-    margin: 1rem;
-    min-width: 250px;
+    background: #fff;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    margin: 0;
+    min-width: 0;
 }
-  
-.card img {
+
+.card-img {
+    overflow: hidden;
+}
+
+.card-img img {
     width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
 }
-  
-.card .category {
-    font-size: 0.9rem;
-    color: #FF4655;
-    margin-top: 0.5rem;
+
+.card:hover .card-img img {
+    transform: scale(1.05);
 }
-  
-.card .date {
-    font-size: 0.8rem;
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0 0 0rem;
+}
+
+.category {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: #ff4655;
+    font-weight: bold;
+}
+
+.divider {
+    color: #777;
+    font-size: 0.75em;
+}
+
+.date {
+    font-size: 0.75em;
     color: #777;
 }
-  
-.card h3 {
-    font-size: 1rem;
-    margin-top: 0.5rem;
+
+.card-title {
+    margin: 0.5rem 1rem 1rem 0rem;
+    font-size: 1.1em;
+    font-weight: bold;
     color: #000;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
- 
+
 /* Welcome Section */
 .welcome {
     background-image: url('../../assets/Light-Background-Valorant.png'); 
@@ -102,10 +141,12 @@ body {
 }
   
 .welcome-text h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #000;
     font-weight: bold;
     margin-bottom: 1rem;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
   
 .welcome-text p {
@@ -114,6 +155,7 @@ body {
     line-height: 170%;
     color: #000;
     margin-bottom: 2rem;
+    font-family: 'FF Mark', Arial, sans-serif;
 }
   
 .welcome-image {
@@ -158,6 +200,8 @@ body {
     color: #fff;
     font-weight: bold;
     margin-bottom: 1rem;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
 .agents-text p {
@@ -166,6 +210,7 @@ body {
     line-height: 170%;
     color: #fff;
     margin-bottom: 2rem;
+    font-family: 'FF Mark', Arial, sans-serif;
 }
 
 .agents-img {
@@ -210,6 +255,8 @@ body {
     color: #000;
     font-weight: bold;
     margin-bottom: 1rem;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
   
 .weapons-text p {
@@ -218,6 +265,7 @@ body {
     line-height: 170%;
     color: #000;
     margin-bottom: 2rem;
+    font-family: 'FF Mark', Arial, sans-serif;
 }
   
 .weapons-image {
@@ -265,6 +313,8 @@ body {
     color: #fff;
     font-weight: bold;
     margin-bottom: 1rem;
+    font-family: 'DIN Next', 'FF Mark', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
 .maps-text p {
@@ -273,6 +323,7 @@ body {
     line-height: 170%;
     color: #fff;
     margin-bottom: 2rem;
+    font-family: 'FF Mark', Arial, sans-serif;
 }
 
 .maps-img {
