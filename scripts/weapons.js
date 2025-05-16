@@ -9,13 +9,19 @@ async function fetchWeapons() {
         main.insertBefore(weaponsContainer, document.getElementById('detail'));
 
         const weaponOrder = [8, 11, 7, 9, 10, 17, 16, 6, 5, 3, 13, 4, 2, 18, 15, 14, 12, 1, 0];
+        const totalWeapons = weaponOrder.length;
+        const maxRenderTime = 1000; // 1 second
+        const delayPerWeapon = maxRenderTime / totalWeapons; // Calculate delay per weapon
+
+        const fragment = document.createDocumentFragment(); // Use a document fragment for batch DOM updates
+        const categoryMap = new Map(); // Cache categories to avoid repeated DOM lookups
 
         weaponOrder.forEach((weaponIndex, idx) => {
             const weapon = data.data[weaponIndex];
             const weaponCard = document.createElement('div');
             weaponCard.classList.add('weapon-card');
             weaponCard.style.opacity = '0';
-            weaponCard.style.animationDelay = (idx * 0.15) + 's';
+            weaponCard.style.animationDelay = (idx * delayPerWeapon) + 'ms';
 
             const img = document.createElement('img');
             img.src = weapon.displayIcon;
@@ -29,21 +35,20 @@ async function fetchWeapons() {
             weaponCard.appendChild(img);
             weaponCard.appendChild(name);
 
-            let category = document.getElementById(weapon.category);
-            let isNewCategory = false;
-            if (category == null) {
+            let category = categoryMap.get(weapon.category);
+            if (!category) {
                 category = document.createElement('div');
                 category.id = weapon.category;
                 const categoryName = document.createElement('h1');
                 categoryName.textContent = weapon.category.split('::')[1];
                 categoryName.classList.add('category-name');
-                categoryName.style.animationDelay = (idx * 0.15 - 0.12) + 's';
+                categoryName.style.animationDelay = (idx * delayPerWeapon - 120) + 'ms';
                 setTimeout(() => {
-                  categoryName.style.opacity = '1';
-                }, Math.max(0, idx * 150 - 120));
+                    categoryName.style.opacity = '1';
+                }, Math.max(0, idx * delayPerWeapon - 120));
                 category.appendChild(categoryName);
-                weaponsContainer.appendChild(category);
-                isNewCategory = true;
+                categoryMap.set(weapon.category, category);
+                fragment.appendChild(category);
             }
             category.appendChild(weaponCard);
             weaponCard.addEventListener('click', () => showWeaponDetail(weapon));
@@ -51,8 +56,10 @@ async function fetchWeapons() {
             // Staggered slide-down animation
             setTimeout(() => {
                 weaponCard.classList.add('visible');
-            }, idx * 150);
+            }, idx * delayPerWeapon);
         });
+
+        weaponsContainer.appendChild(fragment); // Append all elements at once
     } catch (error) {
         console.error('Error fetching weapons:', error);
     }
