@@ -336,7 +336,6 @@ body {
 .maps-img img {
     max-width: 80%; 
     height: auto; 
-    filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.5));
 }
 
 /* Responsive Design */
