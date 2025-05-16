@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/png" href="assets/Logo-aimlytics.png">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/pages/weapons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">
-                <img src="" alt="Logo">
+                <img src="assets/Logo-aimlytics-2.png" alt="Aimlytics Logo">
             </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="agents.html">Agents</a></li>
                 <li><a href="weapons.html" class="active">Weapons</a></li>
+                <li><a href="comparison.html">Stats</a></li>
                 <li><a href="skins.html">Skins</a></li>
                 <li><a href="maps.html">Maps</a></li>
                 <li><a href="about.html">About</a></li>
@@ -28,26 +37,89 @@
     </header>   
     
     <main>
-        <div id="weapons-container">
-            <div class="weapon-card">
-                <img src="" alt="" class="weapon-icon">
-                <h3 class="weapon-name"></h3>
-                <p class="weapon-type"></p>
+        <div class="weapon-detail" id="detail" style="display:none;">
+            <div class="detail-head">
+                <div>
+                    <div class="title-text">
+                        <h1></h1>
+                        <h1 class="sub-title"></h1>
+                    </div>
+                    <p class="detail-text"></p>
+                </div>
+                <div class="gun-container">
+                    <img src="" alt="GUN">
+                </div>
+            </div>
+            <div class="detail-stats">
+                <div class="weapon-stats">
+                    <table>
+                        <th class="title-text" colspan="2"><h1></h1></th>
+                        <tr>
+                            <td></td>
+                            <td><b></b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b></b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b></b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b></b></td>
+                        </tr>
+                    </table>
+                    <div class="ads-stats">
+                        <table>
+                            <th class="title-text" colspan="2"><h1></h1></th>
+                            <tr>
+                                <td></td>
+                                <td><b></b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><b></b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><b></b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><b></b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><b></b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="weapon-preview">
+                    <video class="weapon-skin-video" width="320" height="180" controls autoplay loop muted poster="">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+                <div class="damage-range-section">
+                    <table class="damage-distance"></table>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-socials">
-            <a href="#"><img src="" alt="YouTube"></a>
-            <a href="#"><img src="" alt="Email"></a>
-            <a href="#"><img src="" alt="Discord"></a>
-            <a href="#"><img src="" alt="Facebook"></a>
-            <a href="#"><img src="" alt="Instagram"></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
 
         <div class="footer-logo">
-            <h1>Logo</h1>
+            <img src="assets/Logo-aimlytics.png" alt="Aimlytics Logo">
         </div>
       
         <nav class="footer-links">
@@ -55,6 +127,7 @@
             <a href="news.html">News</a>
             <a href="agents.html">Agents</a>
             <a href="weapons.html">Weapons</a>
+            <a href="comparison.html">Stats</a>
             <a href="skins.html">Skins</a>
             <a href="maps.html">Maps</a>
             <a href="about.html">About</a>
@@ -70,5 +143,6 @@
     </footer>
 
     <script src="scripts/weapons.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

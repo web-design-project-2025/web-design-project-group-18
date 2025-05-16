@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Comprehensive Weapon Stats</title>
     <link rel="icon" type="image/png" href="assets/Logo-aimlytics.png">
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/pages/news.css">
+    <link rel="stylesheet" href="styles/pages/comparison.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -24,40 +26,53 @@
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="agents.html">Agents</a></li>
                 <li><a href="weapons.html">Weapons</a></li>
-                <li><a href="comparison.html">Stats</a></li>
+                <li><a href="comparison.html" class="active">Stats</a></li>
                 <li><a href="skins.html">Skins</a></li>
                 <li><a href="maps.html">Maps</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>   
-    
-    <section class="banner">
-        <div class="banner-img"></div>
-        <h1 class="banner-heading">News</h1>
-    </section>
+    </header>
 
-    <section id="news">
-        <div id="card-grid">    
-            <div class="card hidden"> 
-                <div class="card-img">
-                    <img src="" alt="" class="news-thumbnail">
-                </div>
-                <div class="card-content">
-                    <p class="category"></p>
-                    <p class="divider">|</p>
-                    <p class="date"></p>
-                </div>
-                <h3 class="card-title"></h3>
+    <section class="comprehensive-weapon ">
+        <h2>Weapon Comparison</h2>
+        <p>Compare stats of selected weapons side by side.</p>
+        <div class="comparison-container" id="comparison-container">
+        </div>
+        <div class="button-container">
+            <button id="add-weapon-box">Add Compare</button>
+            <button id="remove-weapon-box">Remove Compare</button>
+        </div>
+        <div id="weapon-selector" style="display: none;"></div>
+        <div id="weapons-container" style="display: none;"></div>
+    </section>
+    <template id="weapon-box-template">
+        <div class="weapon-box">
+            <h3 class="weapon-name">Weapon</h3>
+            <select class="weapon-dropdown">
+                <option value="" disabled selected>Select a weapon</option>
+            </select>
+            <div class="weapon-stats">
+                <p>Type: <span class="type"></span></p>
+                <p>Fire Rate: <span class="fireRate"></span> <span class="fireRate-best stat-best"></span></p>
+                <p>Magazine Size: <span class="magazineSize"></span> <span
+                        class="magazineSize-best stat-best"></span></p>
+                <p>Damage - Head: <span class="damage-head"></span> <span class="damage-head-best stat-best"></span>
+                </p>
+                <p>Damage - Body: <span class="damage-body"></span> <span class="damage-body-best stat-best"></span>
+                </p>
+                <p>Damage - Leg: <span class="damage-leg"></span> <span class="damage-leg-best stat-best"></span>
+                </p>
+                <p>Price: <span class="price"></span> <span class="price-best stat-best"></span></p>
+                <p>Wall Penetration: <span class="wallPenetration"></span></p>
+                <p>Fire Mode: <span class="fireMode"></span></p>
             </div>
         </div>
-        <hr>
-        <button id="show-more">Show More</button>
-    </section>
+    </template>
 
     <footer>
         <div class="footer-socials">
@@ -71,7 +86,7 @@
         <div class="footer-logo">
             <img src="assets/Logo-aimlytics.png" alt="Aimlytics Logo">
         </div>
-      
+
         <nav class="footer-links">
             <a href="index.html">Home</a>
             <a href="news.html">News</a>
@@ -83,16 +98,19 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
-      
-        <hr/>
-      
+
+        <hr />
+
         <div class="footer-copy">
-            <p>© 2025 Copyright Aimlytics. Aimlytics is a community website and not endorsed by Riot Games in any way.</p>
-            <p>Riot Games, Valorant, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+            <p>© 2025 Copyright Aimlytics. Aimlytics is a community website and not endorsed by Riot Games in any way.
+            </p>
+            <p>Riot Games, Valorant, and all associated properties are trademarks or registered trademarks of Riot
+                Games, Inc.</p>
         </div>
     </footer>
 
-    <script src="scripts/news.js"></script>
+    <script src="scripts/comparison.js"></script>
     <script src="scripts/index.js"></script>
 </body>
+
 </html>

@@ -1,24 +1,24 @@
 /* global.css */
+
+/* Fonts Awesome */
 @font-face {
-    font-family: "Tungsten";
-    src: url('/fonts/Tungsten-Bold.ttf');
+    font-family: 'Tungsten';
+    src: url('../fonts/Tungsten-Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: "DIN Next";
-    src: url('/fonts/DIN Next W01 Regular.otf');
-    font-weight: normal;
-}
-@font-face {
-    font-family: "DIN Next";
-    src: url('/fonts/DIN Next W10 Medium.otf');
-    font-weight: medium;
+    font-family: 'DIN Next';
+    src: url('../fonts/DIN Next W01 Regular.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "FF Mark";
-    src: url('/fonts/FontFont_FF.Mark.Pro.otf');
-    font-weight: normal;
+    font-family: 'DIN Next Medium';
+    src: url('../fonts/DIN Next W10 Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FF Mark';
+    src: url('../fonts/FontFont_FF.Mark.Pro.otf') format('opentype');
 }
 
 * {
@@ -41,18 +41,6 @@ header {
     z-index: 100;
 }
 
-h1 {
-    font-family: "Tungsten";
-}
-h2 {
-    font-family: "DIN Next";
-    font-weight: medium;
-}
-h3 {
-    font-family: "DIN Next";
-    font-weight: normal;
-}
-
 /* Navbar */
 .navbar {
     background-color: #000000;
@@ -67,6 +55,12 @@ h3 {
     color: #FF4655;
     text-decoration: none;
     font-weight: bold;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -93,6 +87,53 @@ h3 {
     color: #FF4655;
 }
 
+/* Button */
+.light-btn {
+    padding: 1rem 1.5rem;
+    background: #FF4655;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 150px;
+    text-decoration: none;
+}
+
+.light-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.dark-btn {
+    padding: 1rem 1.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 150px;
+    text-decoration: none;
+}
+.dark-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Banner Heading */
+.banner-heading {
+    font-family: 'Tungsten';
+    font-size: 3rem;
+    color: #fff;
+    background-color: #FF4655;
+    padding: 0.25rem 4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Footer */
 footer {
     background-color: #000;
@@ -111,6 +152,19 @@ footer {
 .footer-socials a {
     margin: 0 0.5rem;
     display: inline-block;
+    color: #fff;
+    font-size: 32px;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #FF4655;
+}
+
+.footer-socials i {
+    color: inherit;
+    font-size: 32px;
+    vertical-align: middle;
 }
 
 .footer-socials img {
@@ -121,6 +175,13 @@ footer {
     margin: 1.25rem 0;
     font-size: 1.5em;
     color: #FF4655;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .footer-links {
@@ -150,4 +211,118 @@ hr {
     font-size: 0.8rem;
     color: #777;
     margin: 0.25rem 0;
+}
+
+/* Responsive Navbar */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+.navbar-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 0.25rem 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem 1rem;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        display: flex;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        transition: max-height 0.4s cubic-bezier(0.5,0,0.5,1), padding 0.3s;
+        padding: 0 0;
+    }
+    .nav-links.open {
+        max-height: 600px;
+        padding: 0.5rem 0 1rem 0;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #222;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    .nav-links.open a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.1s;
+    }
+    .navbar-toggle {
+        display: flex;
+    }
+    /* Animation */
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    .logo img {
+        height: 48px;
+    }
+    .footer-socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .footer-logo h1 {
+        font-size: 1.1em;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    .footer-links a {
+        margin: 0;
+        font-size: 0.95em;
+    }
+    .footer-copy p {
+        font-size: 0.7rem;
+    }
+    footer {
+        padding: 1rem 0.5rem;
+    }
+    .footer-logo img {
+        height: 100px;
+    }
 }

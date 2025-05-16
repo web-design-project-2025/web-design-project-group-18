@@ -1,16 +1,288 @@
-#weapons-container {
+main {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
-  
-.weapons-card {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
+h1 {
+    font-family: "Tungsten";
+}
+h2 {
+    font-family: "DIN Next";
+    font-weight: medium;
+}
+h3 {
+    font-family: "DIN Next";
+    font-weight: normal;
+}
+
+/* Weapon Menu */
+
+.weapons-container {
+    background-color: #0F1923;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    padding: 2.5rem 2.5rem 1rem 2.5rem;
+    height: 71rem;
+    width: 100vw;
+}
+
+.weapons-container>div {
+    margin: 1rem;
+}
+
+.category-name {
+    font-size: 2.3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.weapon-card {
+    background-color: rgba(174, 174, 174, 0.1);
+    border: 0.19rem solid rgba(240, 240, 240, 0.1);
+    margin: 1.25rem 0 0 0rem;
+    width: 19.375rem;
+    height: 9.875rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.weapon-card:hover {
+    cursor: pointer;
+    border-color: #00FFCC;
+    transition: 0.3s ease;
+}
+
+.weapon-card:hover .weapon-icon {
+    filter: drop-shadow(0px 0.7rem #00000050);
+    transition: 0.2s ease;
+}
+
+.weapon-icon {
+    width: 17.68rem;
+    height: 5.69rem;
+    object-fit: contain;
+    margin: 1.63rem 0.88rem 0.4rem 0.88rem;
+    filter: drop-shadow(0px 0rem #00000050);
+    transition: 0.2s ease;
+}
+
+.weapon-name {
+    font-size: 1rem;
+    padding-left: 0.6rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 320px) and (max-width: 1390px) {
+    .weapons-container {
+        height: 93rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 1050px) {
+    .weapons-container {
+        height: 136rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 694px) {
+    .weapons-container {
+        height: initial;
+    }
+}
+
+/* Weapon Detail */
+
+.weapon-detail {
+    width: 89rem;
+    display: none;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+}
+
+.detail-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 17rem;
+    padding: 1.25rem;
+    gap: 0.6rem;
+    align-items: center;
+    align-self: stretch;
+}
+
+.detail-head>div {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.title-text>h1 {
+    display: inline-block;
+    padding-right: 0.5rem;
+}
+
+.sub-title {
+    color: #b2b2b2;
+    font-size: 1.5rem;
+}
+
+.detail-text {
+    font-size: 0.9rem;
+}
+
+.gun-container {
+    max-height: 14.5rem;
+    width: 100%;
+}
+
+.gun-container>img {
+    align-self: stretch;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(0 1.5rem #00000050);
+}
+
+.detail-stats {
+    display: grid;
+    grid-template-areas:
+        "stats preview damage";
+    gap: 1.25rem;
+    min-height: 26.6rem;
+}
+
+/* Weapon Stats Section */
+.weapon-stats {
+    grid-area: stats;
+}
+
+.weapon-preview {
+    grid-area: preview;
+}
+
+.damage-range-section {
+    grid-area: damage;
+}
+
+.weapon-stats,
+.damage-range-section {
+    background-color: rgba(174, 174, 174, 0.1);
+    border: 0.19rem solid rgba(240, 240, 240, 0.1);
+    padding: 0.6rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: .5rem;
+    min-height: auto;
+}
+
+.weapon-stats table,
+.ads-stats table,
+.damage-range-section table.damage-distance {
+    width: 100%;
+    border-collapse: collapse;
+    background: none;
+}
+
+.weapon-stats th,
+.weapon-stats td,
+.ads-stats th,
+.ads-stats td,
+.damage-range-section th,
+.damage-range-section td {
+    border: none;
+    padding: 0.3rem 0.8rem 0.3rem 0.2rem;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.weapon-stats th.title-text,
+.ads-stats th.title-text,
+.damage-range-section th.title-text {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: none;
+    border-bottom: 1px solid #444;
+    margin-top: 1rem;
+    padding-bottom: 0.6rem;
+    text-align: left;
+}
+
+.weapon-stats td,
+.ads-stats td,
+.damage-range-section td {
+    color: #FF4655;
+    font-weight: bold;
+}
+
+.weapon-stats td:first-child,
+.ads-stats td:first-child,
+.damage-range-section td:first-child {
+    color: #fff;
+    font-weight: normal;
+}
+
+.range-section-row {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background: none;
+    padding-top: 1.1rem;
+    padding-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+
+/* General table cleanup */
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+td {
+    height: 1.6rem;
+    font-size: 0.85rem;
+}
+
+th {
+    text-align: left;
+    padding-bottom: 0.6rem;
+}
+
+/* Weapon Preview */
+.weapon-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.weapon-skin-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+@media (min-width: 320px) and (max-width: 1250px) {
+    .detail-stats {
+        grid-template-areas:
+            "stats damage"
+            "preview preview";
+    }
+}
+
+@media (min-width: 320px) and (max-width: 760px) {
+    .detail-stats {
+        grid-template-areas:
+            "stats"
+            "damage"
+            "preview";
+    }
 }

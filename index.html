@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/png" href="assets/Logo-aimlytics-2.png">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/pages/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">
-                <img src="" alt="Logo">
+                <img src="assets/Logo-aimlytics-2.png" alt="Aimlytics Logo">
             </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="agents.html">Agents</a></li>
                 <li><a href="weapons.html">Weapons</a></li>
+                <li><a href="comparison.html">Stats</a></li>
                 <li><a href="skins.html">Skins</a></li>
                 <li><a href="maps.html">Maps</a></li>
                 <li><a href="about.html">About</a></li>
@@ -34,39 +43,106 @@
 
     <section class="news">
         <h2>News</h2>
-        <div class="news-cards">
-            <div class="card">
-                <img src="https://wallpapers.com/images/featured/valorant-305kescxw5dpup7y.jpg" alt="news1">
-                <p class="category">Game Updates</p>
-                <p class="date">14/4/2025</p>
-                <h3>VCT Ascended team bundles...</h3>
+        <div class="news-cards" id="card-grid">
+            <a href="news.html" class="card">
+                <div class="card-img">
+                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/1485fd40313ee6112bf4548911e8fec225c7c3ed-1920x1080.jpg?auto=format&fit=max&w=1920" alt="news1" class="news-thumbnail">
+                </div>
+                <div class="card-content">
+                    <p class="category">ESPORTS</p>
+                    <p class="divider">|</p>
+                    <p class="date">2/5/2025</p>
+                </div>
+                <h3 class="card-title">NA VALORANT Console Open: Everything You Need to Know</h3>
+            </a>
+            <a href="news.html" class="card">
+                <div class="card-img">
+                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/cca62b2e455a4af408090a83907ff7b085725b58-1920x1080.jpg?auto=format&fit=crop&q=80&h=270&w=480&crop=center" alt="news2" class="news-thumbnail">
+                </div>
+                <div class="card-content">
+                    <p class="category">Game Updates</p>
+                    <p class="divider">|</p>
+                    <p class="date">30/4/2025</p>
+                </div>
+                <h3 class="card-title">Act 3 Kickoff Traile</h3>
+            </a>
+            <a href="news.html" class="card">
+                <div class="card-img">
+                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/0a5a04311d3566c4fe19fadb7b03f3c82bf0facd-1920x1080.jpg?auto=format&fit=crop&q=80&h=270&w=480&crop=center" alt="news3" class="news-thumbnail">
+                </div>
+                <div class="card-content">
+                    <p class="category">DEV</p>
+                    <p class="divider">|</p>
+                    <p class="date">29/4/2025</p>
+                </div>
+                <h3 class="card-title">Celebrating 5 Years of VALORANT</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="welcome">
+        <div class="welcome-container">
+            <div class="welcome-text">
+                <h2>Welcome to Valorant</h2>
+                <p>Step into the world of tactical precision and raw skill. Choose your Agent, master your abilities, and fight for victory in game changing new rounds. This is your battlefield - are you ready to clutch it?</p>
+                <a class="light-btn" href="https://playvalorant.com/en-us/download/" target="_blank" rel="noopener">Download Here</a>
             </div>
-            <div class="card">
-                <img src="https://wallpapers.com/images/featured/valorant-305kescxw5dpup7y.jpg" alt="news2">
-                <p class="category">Game Updates</p>
-                <p class="date">1/4/2025</p>
-                <h3>April Fools: Smite 2 Reveal</h3>
+            <div class="welcome-img">
+                <img src="https://cdn1-production-images-kly.akamaized.net/r7mA9PknIvOES_lKGSot4yQoDKo=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3142622/original/000361800_1591163362-valorant-2.jpg" alt="Welcome images">
             </div>
-            <div class="card">
-                <img src="https://wallpapers.com/images/featured/valorant-305kescxw5dpup7y.jpg" alt="news3">
-                <p class="category">Game Updates</p>
-                <p class="date">1/4/2025</p>
-                <h3>VALORANT Patch Notes 10.06</h3>
+        </div>
+    </section>
+
+    <section class="agents">
+        <div class="agents-container">
+            <div class="agents-img">
+                <img src="https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/fullportrait.png" alt="Agent Portrait">
+            </div>
+            <div class="agents-text">
+                <h2>Your Agents</h2>
+                <p>Discover the unique abilities and personalities of each agent in Valorant. Each agent brings a unique set of skills to the battlefield, allowing for diverse strategies and gameplay styles.</p>
+                <a class="dark-btn" href="agents.html">View Agents</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="weapons">
+        <div class="weapons-container">
+            <div class="weapons-text">
+                <h2>Your Weapons</h2>
+                <p>Every weapon is a tool - master it. From sidearms to sniper rifles, your loadout defines your approach. Control recoil, secure angles, and execute with precision. In the right hands, even a single bullet can change the round.</p>
+                <a class="light-btn" href="weapons.html">View Weapons</a>
+            </div>
+            <div class="weapons-img">
+                <img src="https://media.valorant-api.com/weapons/a03b24d3-4319-996d-0f8c-94bbfba1dfc7/displayicon.png" alt="Weapons Portrait">
+            </div>
+        </div>
+    </section>
+
+    <section class="maps">
+        <div class="maps-container">
+            <div class="maps-img">
+                <img src="assets/Ascent-Detail-Background-Valorant.png" alt="Agent Portrait">
+            </div>
+            <div class="maps-text">
+                <h2>Your Maps</h2>
+                <p>Every corner, every line of sight, every choke point - the  map is your battlefield. Use the terrain to your advantage,  control key areas, and outsmart your opponents. Map awareness can make the difference between victory and defeat.</p>
+                <a class="dark-btn" href="maps.html">View Maps</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-socials">
-            <a href="#"><img src="" alt="YouTube"></a>
-            <a href="#"><img src="" alt="Email"></a>
-            <a href="#"><img src="" alt="Discord"></a>
-            <a href="#"><img src="" alt="Facebook"></a>
-            <a href="#"><img src="" alt="Instagram"></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
 
         <div class="footer-logo">
-            <h1>Logo</h1>
+            <img src="assets/Logo-aimlytics.png" alt="Aimlytics Logo">
         </div>
       
         <nav class="footer-links">
@@ -74,6 +150,7 @@
             <a href="news.html">News</a>
             <a href="agents.html">Agents</a>
             <a href="weapons.html">Weapons</a>
+            <a href="comparison.html">Stats</a>
             <a href="skins.html">Skins</a>
             <a href="maps.html">Maps</a>
             <a href="about.html">About</a>

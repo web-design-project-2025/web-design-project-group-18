@@ -1,0 +1,226 @@
+[
+    {
+      "name": "Vandal",
+      "type": "Rifle",
+      "fireRate": 9.75,
+      "magazineSize": 25,
+      "damage": {
+        "head": 160,
+        "body": 40,
+        "leg": 33
+      },
+      "price": 2900,
+      "wallPenetration": "Medium",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Phantom",
+      "type": "Rifle",
+      "fireRate": 11,
+      "magazineSize": 30,
+      "damage": {
+        "head": 156,
+        "body": 39,
+        "leg": 33
+      },
+      "price": 2900,
+      "wallPenetration": "Medium",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Operator",
+      "type": "Sniper",
+      "fireRate": 0.75,
+      "magazineSize": 5,
+      "damage": {
+        "head": 255,
+        "body": 150,
+        "leg": 120
+      },
+      "price": 4700,
+      "wallPenetration": "High",
+      "fireMode": "Bolt-Action"
+    },
+    {
+      "name": "Bulldog",
+      "type": "Rifle",
+      "fireRate": 9.15,
+      "magazineSize": 24,
+      "damage": {
+        "head": 116,
+        "body": 35,
+        "leg": 30
+      },
+      "price": 2050,
+      "wallPenetration": "Medium",
+      "fireMode": "Burst/Automatic"
+    },
+    {
+      "name": "Spectre",
+      "type": "SMG",
+      "fireRate": 13.33,
+      "magazineSize": 30,
+      "damage": {
+        "head": 78,
+        "body": 26,
+        "leg": 22
+      },
+      "price": 1600,
+      "wallPenetration": "Low",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Guardian",
+      "type": "Rifle",
+      "fireRate": 6.5,
+      "magazineSize": 12,
+      "damage": {
+        "head": 195,
+        "body": 65,
+        "leg": 49
+      },
+      "price": 2250,
+      "wallPenetration": "High",
+      "fireMode": "Semi-Automatic"
+    },
+    {
+      "name": "Classic",
+      "type": "Pistol",
+      "fireRate": 6.75,
+      "magazineSize": 12,
+      "damage": {
+        "head": 78,
+        "body": 26,
+        "leg": 22
+      },
+      "price": 0,
+      "wallPenetration": "Low",
+      "fireMode": "Semi-Automatic/Burst"
+    },
+    {
+      "name": "Frenzy",
+      "type": "Pistol",
+      "fireRate": 10,
+      "magazineSize": 13,
+      "damage": {
+        "head": 78,
+        "body": 26,
+        "leg": 22
+      },
+      "price": 450,
+      "wallPenetration": "Low",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Ghost",
+      "type": "Pistol",
+      "fireRate": 6.75,
+      "magazineSize": 15,
+      "damage": {
+        "head": 105,
+        "body": 30,
+        "leg": 25
+      },
+      "price": 500,
+      "wallPenetration": "Medium",
+      "fireMode": "Semi-Automatic"
+    },
+    {
+      "name": "Sheriff",
+      "type": "Pistol",
+      "fireRate": 4,
+      "magazineSize": 6,
+      "damage": {
+        "head": 159,
+        "body": 55,
+        "leg": 47
+      },
+      "price": 800,
+      "wallPenetration": "High",
+      "fireMode": "Semi-Automatic"
+    },
+    {
+      "name": "Stinger",
+      "type": "SMG",
+      "fireRate": 18,
+      "magazineSize": 20,
+      "damage": {
+        "head": 67,
+        "body": 27,
+        "leg": 23
+      },
+      "price": 1100,
+      "wallPenetration": "Low",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Bucky",
+      "type": "Shotgun",
+      "fireRate": 1.1,
+      "magazineSize": 5,
+      "damage": {
+        "head": 44,
+        "body": 22,
+        "leg": 19
+      },
+      "price": 850,
+      "wallPenetration": "Low",
+      "fireMode": "Pump-Action"
+    },
+    {
+      "name": "Judge",
+      "type": "Shotgun",
+      "fireRate": 3.5,
+      "magazineSize": 7,
+      "damage": {
+        "head": 34,
+        "body": 17,
+        "leg": 14
+      },
+      "price": 1850,
+      "wallPenetration": "Medium",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Ares",
+      "type": "LMG",
+      "fireRate": 13,
+      "magazineSize": 50,
+      "damage": {
+        "head": 72,
+        "body": 30,
+        "leg": 25
+      },
+      "price": 1600,
+      "wallPenetration": "High",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Odin",
+      "type": "LMG",
+      "fireRate": 12,
+      "magazineSize": 100,
+      "damage": {
+        "head": 95,
+        "body": 38,
+        "leg": 32
+      },
+      "price": 3200,
+      "wallPenetration": "High",
+      "fireMode": "Fully Automatic"
+    },
+    {
+      "name": "Marshal",
+      "type": "Sniper",
+      "fireRate": 1.5,
+      "magazineSize": 5,
+      "damage": {
+        "head": 202,
+        "body": 101,
+        "leg": 85
+      },
+      "price": 950,
+      "wallPenetration": "Medium",
+      "fireMode": "Bolt-Action"
+    }
+]
