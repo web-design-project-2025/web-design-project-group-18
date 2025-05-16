@@ -24,15 +24,38 @@ body {
   
 .banner-title {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 4rem;
     font-family: 'Tungsten', 'DIN Next', 'FF Mark', Arial, sans-serif;
     letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
 }
-  
+
+.animate-on-scroll.fade-in.banner-title {
+    animation: fadeInUpBanner 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll.fade-in.banner-title.active {
+    animation-play-state: running;
+}
+
+@keyframes fadeInUpBanner {
+    from {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + 40px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 /* News Section */
 .news {
     width: 90%;
@@ -336,6 +359,101 @@ body {
 .maps-img img {
     max-width: 80%; 
     height: auto; 
+}
+
+/* Animation for scroll effects */
+.animate-on-scroll.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll.slide-in-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll.slide-in-right {
+    opacity: 0;
+    animation: slideInRight 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll.active {
+    animation-play-state: running;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.animate-on-scroll.news-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.animate-on-scroll.news-fade-in.active {
+    opacity: 1;
+    transform: none;
+}
+
+.news-cards .card.animate-on-scroll.news-fade-in:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.news-cards .card.animate-on-scroll.news-fade-in:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.news-cards .card.animate-on-scroll.news-fade-in:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.welcome-text.animate-on-scroll.slide-in-left { transition-delay: 0.1s; }
+.welcome-img.animate-on-scroll.slide-in-right { transition-delay: 0.3s; }
+.agents-img.animate-on-scroll.slide-in-left { transition-delay: 0.1s; }
+.agents-text.animate-on-scroll.slide-in-right { transition-delay: 0.3s; }
+.weapons-text.animate-on-scroll.slide-in-left { transition-delay: 0.1s; }
+.weapons-img.animate-on-scroll.slide-in-right { transition-delay: 0.3s; }
+.maps-img.animate-on-scroll.slide-in-left { transition-delay: 0.1s; }
+.maps-text.animate-on-scroll.slide-in-right { transition-delay: 0.3s; }
+
+/* Responsive: ensure animations look good on mobile */
+@media (max-width: 600px) {
+    .animate-on-scroll.slide-in-left,
+    .animate-on-scroll.slide-in-right {
+        transform: translateY(40px);
+    }
 }
 
 /* Responsive Design */
