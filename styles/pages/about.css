@@ -6,6 +6,9 @@ body {
     min-height: 100vh;
     padding-top: 80px; 
     overflow-x: hidden;
+    background: #0f1923;
+    align-items: center;
+    justify-content: center;
   }
   
   header {
@@ -32,7 +35,7 @@ body {
 
   .mask-about {
   display: inline-block;
-  font-size: 10vw;
+  font-size: 1rem;
   font-weight: 800;
   color: transparent;
   position: relative;
@@ -48,7 +51,7 @@ body {
   }
   @media (min-width: 1200px) {
   .mask-about {
-    font-size: 120px; 
+    font-size: 90px; 
   }
 }
   @keyframes textReveal {
@@ -74,6 +77,12 @@ body {
     animation: textFadeUp 1.2s ease forwards;
     padding: 0 1rem;
   }
+
+  @media (min-width: 1200px) {
+  .mask-about {
+    font-size: 120px;
+  }
+}
   /*mobile */
   @media (max-width: 768px) {
   .content-wrapper {
@@ -122,7 +131,7 @@ body {
  
   .mask-about {
     display: inline-block;
-    font-size: 10vw;
+    font-size: 8rem;
     font-weight: 800;
     color: transparent;
     position: relative;
