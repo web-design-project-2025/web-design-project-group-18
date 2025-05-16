@@ -2,7 +2,6 @@ body {
     background-color: #fff; 
   }
   
-
 /* News-detail Background */
 .detail-bg {
     position: relative;
@@ -107,4 +106,26 @@ body {
 .detail-content p {
     margin-bottom: 1.5rem; 
     line-height: 1.7; 
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .detail-bg::before {
+    height: 260px;
+    background-position: 50% 0%;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-bg::before {
+    height: 180px;
+    background-position: 50% 0%;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-bg::before {
+    height: 100px;
+    background-position: 50% 0%;
+  }
 }
