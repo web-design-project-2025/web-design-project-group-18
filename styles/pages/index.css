@@ -141,7 +141,7 @@ body {
 }
   
 .welcome-text h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #000;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -337,4 +337,121 @@ body {
     max-width: 80%; 
     height: auto; 
     filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .welcome-container,
+    .agents-container,
+    .weapons-container,
+    .maps-container {
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .banner {
+        height: 360px;
+    }
+    .news-cards {
+        grid-template-columns: 1fr;
+    }
+    .banner-title {
+        font-size: 2.2rem;
+    }
+    .welcome,
+    .agents,
+    .weapons,
+    .maps {
+        min-height: 600px;
+        background-size: cover;
+        background-position: center 35%;
+    }
+    .welcome-container,
+    .agents-container,
+    .weapons-container,
+    .maps-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: flex-start;
+    }
+    .welcome-text, .agents-text, .weapons-text, .maps-text {
+        order: 1;
+        margin: 2rem;
+    }
+    .welcome-text a, .agents-text a, .weapons-text a, .maps-text a {
+        order: 2;
+    }
+    .welcome-img, .agents-img, .weapons-img, .maps-img {
+        order: 3;
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .welcome-img img, .weapons-img img, .maps-img img {
+        max-width: 80vw;
+        height: auto;
+        gap: 2rem;
+    }
+    .agents-img img {
+        max-width: 70vw;
+        height: auto;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        height: 300px;
+    }
+    .banner-title {
+        font-size: 1.2rem;
+    }
+    .news {
+        padding: 1rem 0.5rem;
+    }
+    .welcome-container,
+    .agents-container,
+    .weapons-container,
+    .maps-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    .welcome-text, .agents-text, .weapons-text, .maps-text {
+        order: 1;
+        text-align: center;
+    }
+    .welcome-text a, .agents-text a, .weapons-text a, .maps-text a {
+        order: 2;
+        margin: 1rem auto 0 auto;
+        display: inline-block;
+    }
+    .welcome-img, .agents-img, .weapons-img, .maps-img {
+        order: 3;
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .welcome-img img, .agents-img img, .weapons-img img, .maps-img img {
+        max-width: 85vw;
+        height: auto;
+    }
+    .welcome-text h2, .agents-text h2, .weapons-text h2, .maps-text h2 {
+        font-size: 1.2rem;
+    }
+    .welcome-text p, .agents-text p, .weapons-text p, .maps-text p {
+        font-size: 0.95rem;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
