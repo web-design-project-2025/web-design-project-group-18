@@ -44,6 +44,7 @@ body {
   white-space: nowrap; 
   overflow: hidden; 
   line-height: 1.2; 
+    font-family: "Tungsten", Arial, sans-serif;
   }
   @media (min-width: 1200px) {
   .mask-about {
