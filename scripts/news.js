@@ -44,8 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextIndex = Math.min(currentIndex + cardsToReveal, newsData.length);
         const newsToShow = newsData.slice(currentIndex, nextIndex);
 
-        newsToShow.forEach(newsItem => {
-            cardGrid.appendChild(createCard(newsItem));
+        newsToShow.forEach((newsItem, i) => {
+            const card = createCard(newsItem);
+            card.style.animationDelay = (i * 0.15) + 's'; // Stagger each card
+            card.classList.add('fade-in');
+            cardGrid.appendChild(card);
         });
 
         currentIndex = nextIndex;

@@ -20,6 +20,42 @@ body {
     background-size: cover;
     background-position: 50% 5%;
 }
+
+.banner-heading {
+  font-size: 3rem;
+  color: #fff;
+  background-color: #FF4655;
+  padding: 0.25rem 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: popFadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation-delay: 0.2s;
+}
+
+.banner-heading::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  left: 6px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ff4b5c;
+}
+
+/* Pop and fade-in animation for banner heading */
+@keyframes popFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate(-50%, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
   
 /* News Section */
 #news {
@@ -42,6 +78,9 @@ body {
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
   
 .card-img {
@@ -113,6 +152,26 @@ body {
 
 .hidden {
     display: none;
+}
+
+/* Fade-in and slide-in from left animation */
+@keyframes fadeInSlideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.fade-in {
+    opacity: 1 !important;
+    pointer-events: auto;
+    visibility: visible;
+    animation: fadeInSlideLeft 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+    will-change: opacity, transform;
 }
 
 /* Responsive Design */

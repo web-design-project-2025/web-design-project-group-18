@@ -17,3 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#news-detail').innerHTML = '<p>News detail not found.</p>';
     }
 });
+
+// Wait for container animation, then show content
+window.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.detail-container');
+  if (container) {
+    container.addEventListener('animationend', function handler() {
+      container.classList.add('show-content');
+      container.removeEventListener('animationend', handler);
+    });
+  }
+
+  // Existing scroll animation for detail-content
+  const animatedEls = document.querySelectorAll('.detail-content h1, .detail-content h2, .detail-content h3, .detail-content p, .detail-content li');
+  animatedEls.forEach(el => {
+    el.classList.add('animate-on-scroll');
+  });
+
+  function revealOnScroll() {
+    animatedEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // Initial check
+});
