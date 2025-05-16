@@ -10,7 +10,7 @@ main {
     margin: 0;
     width: 100%;
     min-height: 100vh;
-    background-image: url('../../Dark-Background-Valorant.png');
+    background-image: url('../../assets/Dark-Background-Valorant.png');
     background-size: cover;
     background-position: 50% 75%;
 }

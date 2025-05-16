@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const mapId = urlParams.get("map") || "split";
 
-  fetch("maps.json")
+  fetch("data/maps.json")
     .then((response) => response.json())
     .then((data) => {
       const selectedMap = data.maps.find((map) => map.id === mapId);
