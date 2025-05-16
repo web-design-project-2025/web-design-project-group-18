@@ -40,6 +40,7 @@ footer {
   animation: textReveal 1.8s ease-out forwards;
   white-space: nowrap;
   overflow: hidden;
+  font-family: "Tungsten", Arial, sans-serif;
 }
 @media (min-width: 1200px) {
   .mask-about {
