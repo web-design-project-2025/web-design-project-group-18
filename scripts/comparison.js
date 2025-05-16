@@ -152,3 +152,21 @@ function getBestIndices(stat, isHigherBetter = true, subkey = null) {
   });
   return bestIndices;
 }
+
+// Animate weapon boxes and header on page load
+window.addEventListener('DOMContentLoaded', function () {
+  // Animate header and description
+  const h2 = document.querySelector('h2');
+  const desc = document.querySelector('.comprehensive-weapon > p');
+  if (h2) h2.style.opacity = '1';
+  if (desc) desc.style.opacity = '1';
+
+  // Animate weapon boxes with staggered effect
+  const boxes = document.querySelectorAll('.weapon-box');
+  boxes.forEach((box, idx) => {
+    box.style.animationDelay = (idx * 0.15) + 's';
+    setTimeout(() => {
+      box.classList.add('visible');
+    }, idx * 150);
+  });
+});

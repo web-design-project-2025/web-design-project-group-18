@@ -11,6 +11,9 @@ h2 {
     text-align: center;
     letter-spacing: 0.125rem;
     font-family: 'Tungsten', Impact, sans-serif;
+    opacity: 0;
+    animation: fadeInHeader 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.1s;
 }
 
 p {
@@ -19,6 +22,12 @@ p {
     color: #ece8e1;
     text-align: center;
     font-family: 'DIN Next', Arial, sans-serif;
+}
+
+.comprehensive-weapon > p {
+    opacity: 0;
+    animation: fadeInHeader 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.3s;
 }
 
 .comparison-container {
@@ -46,6 +55,12 @@ p {
     text-align: left;
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
+    opacity: 0;
+    animation: fadeInUpWeaponBox 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.weapon-box.visible {
+    opacity: 1;
 }
 
 .weapon-box h3 {
@@ -178,4 +193,28 @@ select:focus {
     .comprehensive-weapon {
         padding: 5vw;
     }
+}
+
+/* Fade-in and slide-up animation for weapon-boxes */
+@keyframes fadeInUpWeaponBox {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in for h2 and p */
+@keyframes fadeInHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

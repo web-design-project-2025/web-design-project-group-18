@@ -37,6 +37,20 @@ h3 {
     font-size: 2.3rem;
     text-align: center;
     text-transform: uppercase;
+    opacity: 0;
+    animation: slideDownWeaponCard 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Slide-down animation for weapon cards */
+@keyframes slideDownWeaponCard {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .weapon-card {
@@ -47,6 +61,12 @@ h3 {
     height: 9.875rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease;
+    opacity: 0;
+    animation: slideDownWeaponCard 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.weapon-card.visible {
+    opacity: 1;
 }
 
 .weapon-card:hover {

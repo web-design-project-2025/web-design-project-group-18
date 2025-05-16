@@ -10,10 +10,12 @@ async function fetchWeapons() {
 
         const weaponOrder = [8, 11, 7, 9, 10, 17, 16, 6, 5, 3, 13, 4, 2, 18, 15, 14, 12, 1, 0];
 
-        weaponOrder.forEach(weaponIndex => {
+        weaponOrder.forEach((weaponIndex, idx) => {
             const weapon = data.data[weaponIndex];
             const weaponCard = document.createElement('div');
             weaponCard.classList.add('weapon-card');
+            weaponCard.style.opacity = '0';
+            weaponCard.style.animationDelay = (idx * 0.15) + 's';
 
             const img = document.createElement('img');
             img.src = weapon.displayIcon;
@@ -28,17 +30,28 @@ async function fetchWeapons() {
             weaponCard.appendChild(name);
 
             let category = document.getElementById(weapon.category);
+            let isNewCategory = false;
             if (category == null) {
                 category = document.createElement('div');
                 category.id = weapon.category;
                 const categoryName = document.createElement('h1');
                 categoryName.textContent = weapon.category.split('::')[1];
                 categoryName.classList.add('category-name');
+                categoryName.style.animationDelay = (idx * 0.15 - 0.12) + 's';
+                setTimeout(() => {
+                  categoryName.style.opacity = '1';
+                }, Math.max(0, idx * 150 - 120));
                 category.appendChild(categoryName);
                 weaponsContainer.appendChild(category);
+                isNewCategory = true;
             }
             category.appendChild(weaponCard);
             weaponCard.addEventListener('click', () => showWeaponDetail(weapon));
+
+            // Staggered slide-down animation
+            setTimeout(() => {
+                weaponCard.classList.add('visible');
+            }, idx * 150);
         });
     } catch (error) {
         console.error('Error fetching weapons:', error);
