@@ -36,11 +36,13 @@
       </nav>
     </header>
 
+    <section class="banner">
+        <div class="banner-img"></div>
+        <h1 class="banner-heading">Maps</h1>
+    </section>
+
     <div class="middle-section">
       <div class="content-wrapper">
-        <div class="title">
-          <h2>Maps</h2>
-        </div>
         <div class="map-area">
           <div class="arrow left" onclick="plusDivs(-1)">&#10094;</div>
           
@@ -54,6 +56,11 @@
                 alt="HAVEN"
               />
               <img class="mySlides" src="image/sunnset.webp" alt="SUNSET" />
+              <img class="mySlides" src="image/lotuss.png" alt="LOTUS" />
+              <img class="mySlides" src="image/asccent.png" alt="ASCENT" />
+              <img class="mySlides" src="image/iceeboxx.png" alt="ICEBOX" />
+              <img class="mySlides" src="image/brezzze.png" alt="BREEZE" />
+              <img class="mySlides" src="image/ABYSS.png" alt="ABYSS" />
               <div class="map-name" id="mapTitle">SPLIT</div>
             </div>
           </a>
@@ -61,15 +68,7 @@
           <div class="arrow right" onclick="plusDivs(1)">&#10095;</div>
         </div>
       </div>
-      <div class="pagination">
-        <span onclick="currentDiv(1)" role="button" tabindex="0" class="active"
-          >1</span
-        >
-        <span onclick="currentDiv(2)" role="button" tabindex="0">2</span>
-        <span onclick="currentDiv(3)" role="button" tabindex="0">3</span>
-        <span onclick="currentDiv(4)" role="button" tabindex="0">4</span>
-        <span onclick="currentDiv(5)" role="button" tabindex="0">5</span>
-      </div>
+       <div class="pagination" id="pagination-container"></div>
     </div>
 
     <footer>
