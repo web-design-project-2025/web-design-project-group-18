@@ -1,7 +1,34 @@
 var slideIndex = 1;
-var dots = document.querySelectorAll(".pagination span");
-const mapNames = ["SPLIT", "FRACTURE", "BIND", "HAVEN", "SUNSET"];
-showDivs(slideIndex);
+const totalMaps = 10;
+const mapNames = [
+  "SPLIT",
+  "FRACTURE",
+  "BIND",
+  "HAVEN",
+  "SUNSET",
+  "LOTUS",
+  "ASCENT",
+  "ICEBOX",
+  "BREEZE",
+  "ABYSS",
+];
+const mapIds = [
+  "split",
+  "fracture",
+  "bind",
+  "haven",
+  "sunset",
+  "lotus",
+  "ascent",
+  "icebox",
+  "breeze",
+  "abyss",
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  showDivs(slideIndex);
+  createPagination();
+});
 
 function plusDivs(n) {
   showDivs((slideIndex += n));
@@ -12,38 +39,63 @@ function currentDiv(n) {
 }
 
 function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var titleElement = document.getElementById("mapTitle");
-
+  const x = document.getElementsByClassName("mySlides");
   if (n > x.length) slideIndex = 1;
   if (n < 1) slideIndex = x.length;
 
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-
+  Array.from(x).forEach((slide) => (slide.style.display = "none"));
   x[slideIndex - 1].style.display = "block";
 
-  if (titleElement) {
-    titleElement.textContent = mapNames[slideIndex - 1];
-  }
-
-  if (typeof dots !== "undefined") {
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" w3-red", "");
-    }
-    dots[slideIndex - 1].className += " w3-red";
-  }
-
-  dots.forEach((dot) => dot.classList.remove("active"));
-
-  dots[slideIndex - 1].classList.add("active");
+  document.getElementById("mapTitle").textContent = mapNames[slideIndex - 1];
+  createPagination();
 }
-// Add this array mapping slide indexes to map IDs
-const mapIds = ["split", "fracture", "bind", "haven", "sunset"];
 
-// Add click handler to map container
+// Pagination functions
+function createPagination() {
+  const container = document.getElementById("pagination-container");
+  container.innerHTML = "";
+
+  const start = slideIndex <= 5 ? 1 : 6;
+  const end = slideIndex <= 5 ? 5 : 10;
+
+  // Left arrow (only on map 6)
+  if (slideIndex === 6) {
+    const leftArrow = document.createElement("span");
+    leftArrow.innerHTML = "◄";
+    leftArrow.className = "pagination-arrow";
+    leftArrow.onclick = () => {
+      slideIndex = 5;
+      showDivs(slideIndex);
+    };
+    container.appendChild(leftArrow);
+  }
+
+  // Number buttons
+  for (let i = start; i <= end; i++) {
+    const btn = document.createElement("span");
+    btn.textContent = i;
+    btn.className = i === slideIndex ? "active" : "";
+    btn.onclick = () => {
+      slideIndex = i;
+      showDivs(slideIndex);
+    };
+    container.appendChild(btn);
+  }
+
+  // Right arrow (only on map 5)
+  if (slideIndex === 5) {
+    const rightArrow = document.createElement("span");
+    rightArrow.innerHTML = "►";
+    rightArrow.className = "pagination-arrow";
+    rightArrow.onclick = () => {
+      slideIndex = 6;
+      showDivs(slideIndex);
+    };
+    container.appendChild(rightArrow);
+  }
+}
+
+// move to detail map
 document.querySelector(".map-container").addEventListener("click", function () {
   const mapId = mapIds[slideIndex - 1];
   window.location.href = `mapsDT.html?map=${mapId}`;

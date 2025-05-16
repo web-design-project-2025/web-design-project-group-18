@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 header {
@@ -37,12 +38,29 @@ footer {
   -webkit-mask-size: 300% 300%;
   mask-size: 300% 300%;
   animation: textReveal 1.8s ease-out forwards;
+  white-space: nowrap;
+  overflow: hidden;
 }
+@media (min-width: 1200px) {
+  .mask-about {
+    font-size: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
+  .contact-container {
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+}
 .contact-container {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 2rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 .contact-form {
